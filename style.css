@@ -5,6 +5,11 @@ p {
     margin-top: 0;
 }
 
+#about-me-text {
+    word-break: break-all;
+    overflow: break-word;
+}
+
 li {
     font-size: 1.1rem;
     color: #000000;
