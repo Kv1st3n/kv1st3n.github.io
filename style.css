@@ -1,3 +1,7 @@
+body {
+    font-family: Arial;
+}
+
 #about-me-text {
     word-break: break-all;
     overflow: break-word;
