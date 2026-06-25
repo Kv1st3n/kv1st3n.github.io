@@ -3,7 +3,7 @@
     overflow: break-word;
 }
 
-li {
+li>a {
     font-size: 1.1rem;
     color: #ff0000;
 }
