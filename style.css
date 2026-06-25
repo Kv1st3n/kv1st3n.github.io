@@ -1,11 +1,8 @@
 body {
     font-family: Arial;
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(255, 255, 255);
 }
 
-#about-me {
-    background-color: green;
-}
 
 #about-me-text {
     word-break: break-all;
