@@ -4,3 +4,8 @@ p {
     color: #666;
     margin-top: 0;
 }
+
+li {
+    font-size: 1.1rem;
+    color: #ff0000;
+}
