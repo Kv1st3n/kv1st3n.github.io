@@ -1,8 +1,7 @@
 body {
-    font-family: Arial;
+    font-family: "Courier New", Courier, monospace;
     background-color: rgb(255, 255, 255);
 }
-
 
 #about-me-text {
     word-break: break-all;
