@@ -1,4 +1,4 @@
-const dragElement = document.getElementById("draggable");
+const box = document.getElementById("draggable");
 
 let offsetX = 0;
 let offsetY = 0;
@@ -9,17 +9,17 @@ box.addEventListener('pointerdown', (e) => {
   offsetX = e.clientX - box.offsetLeft;
   offsetY = e.clientY - box.offsetTop;
   
-  box.addEventListener('pointermove', dragElement);
+  box.addEventListener('pointermove', onDrag);
   box.addEventListener('pointerup', stopElementDrag);
 });
 
-function dragElement(e) {
+function onDrag(e) {
   box.style.left = `${e.clientX - offsetX}px`;
   box.style.top = `${e.clientY - offsetY}px`;
 }
 
 function stopElementDrag(e) {
   box.releasePointerCapture(e.pointerId);
-  box.removeEventListener('pointermove', dragElement);
+  box.removeEventListener('pointermove', onDrag);
   box.removeEventListener('pointerup', stopElementDrag);
 }
