@@ -9,8 +9,8 @@ box.addEventListener('pointerdown', (e) => {
     offsetX = e.clientX - box.offsetLeft;
     offsetY = e.clientY - box.offsetTop;
     
-    box.addEventListener('pointermove', onDrag);
-    box.addEventListener('pointerup', stopElementDrag);
+    window.addEventListener('pointermove', onDrag);
+    window.addEventListener('pointerup', stopElementDrag);
 });
 
 function onDrag(e) {
@@ -23,6 +23,6 @@ function onDrag(e) {
 
 function stopElementDrag(e) {
     box.releasePointerCapture(e.pointerId);
-    box.removeEventListener('pointermove', onDrag);
-    box.removeEventListener('pointerup', stopElementDrag);
+    window.removeEventListener('pointermove', onDrag);
+    window.removeEventListener('pointerup', stopElementDrag);
 }
