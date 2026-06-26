@@ -8,6 +8,12 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
+#about-me.box {
+    height: 300px;
+    width: 300px;
+    background-color: blanchedalmond;
+}
+
 #about-me-text {
     word-break: break-all;
     overflow: break-word;
