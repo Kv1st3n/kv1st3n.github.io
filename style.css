@@ -32,6 +32,11 @@ body {
     width: 80px;
     cursor: pointer;
     user-select: none;
+    cursor: grab;
+}
+
+.my-computer:active, .program-shortcut:active {
+    cursor: grabbing;
 }
 
 .my-computer img, .program-shortcut img {
@@ -41,7 +46,7 @@ body {
     margin-bottom: 5px;
 }
 
-.my-computer:hover img .icon-text,
+.my-computer:hover .icon-text, 
 .program-shortcut:hover .icon-text {
     background-color: #000000;
     color: #FFFF00;
