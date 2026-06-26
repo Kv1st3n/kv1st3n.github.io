@@ -12,15 +12,12 @@ body {
     height: 300px;
     width: 300px;
     background-color: blanchedalmond;
+    border: 3px solid #C0C0C0;
 }
 
 #about-me-text {
     word-break: break-all;
     overflow: break-word;
-}
-
-#languages-tools {
-    color:aquamarine;
 }
 
 li>a {
