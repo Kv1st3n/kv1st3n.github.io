@@ -41,6 +41,13 @@ body {
     margin-bottom: 5px;
 }
 
+.my-computer:hover img .icon-text,
+.program-shortcut:hover .icon-text {
+    background-color: #000000;
+    color: #FFFF00;
+    outline: 1px dotted #A8A8A8;
+}
+
 /* Universal label layout for icons */
 .icon-text {
     font-size: 0.9rem;
