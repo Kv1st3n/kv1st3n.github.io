@@ -11,8 +11,9 @@ body {
 #about-me.box {
     height: 300px;
     width: 300px;
-    background-color: blanchedalmond;
-    border: 3px solid #C0C0C0;
+    background-color: #000000;
+    border: 4px double #C0C0C0; 
+    color: #C0C0C0;
 }
 
 #about-me-text {
