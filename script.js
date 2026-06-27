@@ -1,28 +1,32 @@
-const box = document.getElementById("draggable");
+const draggableElements = document.querySelectorAll(".draggable-window");
 
-let offsetX = 0;
-let offsetY = 0;
+draggableElements.forEach((element) => {
+  let offsetX = 0;
+  let offsetY = 0;
 
-box.addEventListener('pointerdown', (e) => {
-    box.setPointerCapture(e.pointerId);
+  element.addEventListener('pointerdown', (e) => {
+    draggableElements.forEach(el => el.style.zIndex = "5");
+    element.style.zIndex = "10";
+
+    element.setPointerCapture(e.pointerId);
     
-    offsetX = e.clientX - box.offsetLeft;
-    offsetY = e.clientY - box.offsetTop;
+    offsetX = e.clientX - element.offsetLeft;
+    offsetY = e.clientY - element.offsetTop;
     
+    const onDrag = (moveEvent) => {
+      element.style.position = 'absolute';
+      element.style.margin = '0'; 
+      element.style.left = `${moveEvent.clientX - offsetX}px`;
+      element.style.top = `${moveEvent.clientY - offsetY}px`;
+    };
+
+    const stopElementDrag = (upEvent) => {
+      element.releasePointerCapture(upEvent.pointerId);
+      window.removeEventListener('pointermove', onDrag);
+      window.removeEventListener('pointerup', stopElementDrag);
+    };
+
     window.addEventListener('pointermove', onDrag);
     window.addEventListener('pointerup', stopElementDrag);
+  });
 });
-
-function onDrag(e) {
-    box.style.position = 'absolute';
-    box.style.margin = '0';
-
-    box.style.left = `${e.clientX - offsetX}px`;
-    box.style.top = `${e.clientY - offsetY}px`;
-}
-
-function stopElementDrag(e) {
-    box.releasePointerCapture(e.pointerId);
-    window.removeEventListener('pointermove', onDrag);
-    window.removeEventListener('pointerup', stopElementDrag);
-}
