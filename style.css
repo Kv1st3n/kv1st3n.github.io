@@ -57,6 +57,19 @@ body {
     outline: 2px dashed #FFFF00;
 }
 
+.draggable-window[role="button"] {
+    cursor: grab;
+}
+
+.draggable-window[role="button"]:active {
+    cursor: grabbing;
+}
+
+.draggable-window[role="button"]:focus {
+    outline: 2px dashed #FFFF00;
+    outline-offset: 4px; 
+}
+
 .icon-text {
     font-size: 0.9rem;
     color: #C0C0C0; 
