@@ -54,6 +54,10 @@ body {
     outline: 1px dotted #A8A8A8;
 }
 
+.draggable-window:focus {
+    outline: 2px dashed #FFFF00;
+}
+
 .icon-text {
     font-size: 0.9rem;
     color: #C0C0C0; 
