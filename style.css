@@ -180,6 +180,10 @@ li > a:hover {
     display: none;
 }
 
+.program-window.active {
+    display: block !important;
+}
+
 .my-trashbin-prog {
     background-color: #000000;
     padding: 30px;

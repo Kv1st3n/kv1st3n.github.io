@@ -1,24 +1,25 @@
+const draggableElements = document.querySelectorAll(".draggable-window");
 const popupOverlay = document.getElementById('desktop-programs-overlay');
 const allProgramWindows = document.querySelectorAll('.program-window');
 
 /* will make windows popup on click whenever a user clicks on a program*/
 function launchProgram(element) {
-    allProgramWindows.forEach(win => win.style.display = 'none');
+    allProgramWindows.forEach(win => win.classList.remove('active'));
 
     popupOverlay.classList.add('active');
 
     if (element.classList.contains('my-trashbin')) {
-        document.getElementById('prog-trashbin').style.display = 'block';
+        document.getElementById('prog-trashbin').classList.add('active');
     } 
     else if (element.classList.contains('my-computer')) {
-        document.getElementById('prog-computer').style.display = 'block';
+        document.getElementById('prog-computer').classList.add('active');
     }
 }
 
 /* Will make the opened window close by turning its visibility to none*/
 function closeProgram() {
     popupOverlay.classList.remove('active');
-    allProgramWindows.forEach(win => win.style.display = 'none');
+    allProgramWindows.forEach(win => win.classList.remove('active'));
 }
 
 const closeBtn = document.querySelectorAll('.close-btn');
