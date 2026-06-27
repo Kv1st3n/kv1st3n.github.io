@@ -45,7 +45,7 @@ body {
 }
 
 .my-computer:hover .icon-text, 
-.my-empty-folder:hover, .icon-text
+.my-empty-folder:hover .icon-text, 
 .program-shortcut:hover .icon-text {
     background-color: #000000;
     color: #FFFF00;
