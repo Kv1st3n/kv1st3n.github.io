@@ -175,8 +175,26 @@ li > a:hover {
 }
 
 .my-trashbin-prog {
-    background-color: white;
+    background-color: #000000;
     padding: 30px;
-    position: relative;
+    position: relative; 
     text-align: center;
+    min-width: 300px;
+}
+
+/* 2. Style and position the close button */
+.close-btn {
+    position: absolute;
+    top: 5px; 
+    right: 5px;
+    background: transparent;
+    color: #C0C0C0;
+    border: none;
+    font-family: 'Perfect DOS VGA 437', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #FFFF00;
 }
