@@ -1,9 +1,7 @@
 const draggableElements = document.querySelectorAll(".draggable-window");
 const popupOverlay = document.getElementById('desktop-programs-overlay');
 
-const closeBtnArray = ['closeTrashBin','closeMyComputer'];
-
-const closeBtn = document.getElementById(closeBtnArray);
+const closeBtn = document.querySelectorAll('.close-btn');
 
 /* will make windows popup on click whenever a user clicks on a program*/
 function launchProgram(element) {
@@ -19,9 +17,9 @@ function closeProgram() {
     popupOverlay.classList.remove('active');
 }
 
-if (closeBtn) {
-    closeBtn.addEventListener('click', closeProgram);
-}
+closeBtn.forEach((btn) => {
+    btn.addEventListener('click', closeProgram);
+});
 
 /* This script makes it so that the programs are draggable where the onDrag is used to update the position of the program */
 
