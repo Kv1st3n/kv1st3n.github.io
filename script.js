@@ -12,6 +12,13 @@ function launchProgram(element) {
 /* Will make the opened window close by turning its visibility to none*/
 function closeProgram(element) {
 
+    if (element.classList.contains('my-trashbin')) {
+        popupOverlay.classList.remove('active');
+    }
+}
+
+if (closeBtn) {
+    closeBtn.addEventListener('click', closeProgram);
 }
 
 /* This script makes it so that the programs are draggable where the onDrag is used to update the position of the program */
