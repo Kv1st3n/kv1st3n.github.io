@@ -1,4 +1,20 @@
 const draggableElements = document.querySelectorAll(".draggable-window");
+const popupOverlay = document.getElementById('desktop-programs-overlay');
+
+/* will make windows popup on click whenever a user clicks on a program*/
+function launchProgram(element) {
+
+    if (element.classList.contains('my-trashbin')) {
+        popupOverlay.classList.add('active');
+    }
+}
+
+/* Will make the opened window close by turning its visibility to none*/
+function closeProgram(element) {
+
+}
+
+/* This script makes it so that the programs are draggable where the onDrag is used to update the position of the program */
 
 draggableElements.forEach((element) => {
     let offsetX = 0;
@@ -13,6 +29,7 @@ draggableElements.forEach((element) => {
     offsetX = e.clientX - element.offsetLeft;
     offsetY = e.clientY - element.offsetTop;
     
+    // updates the position
     const onDrag = (moveEvent) => {
         element.style.position = 'absolute';
         element.style.margin = '0'; 
@@ -20,6 +37,7 @@ draggableElements.forEach((element) => {
         element.style.top = `${moveEvent.clientY - offsetY}px`;
     };
 
+    // once the pointer stops dragging, the program will be placed on the new position
     const stopElementDrag = (upEvent) => {
         element.releasePointerCapture(upEvent.pointerId);
         window.removeEventListener('pointermove', onDrag);
@@ -28,5 +46,10 @@ draggableElements.forEach((element) => {
 
         window.addEventListener('pointermove', onDrag);
         window.addEventListener('pointerup', stopElementDrag);
-  });
+    });
+
+    element.addEventListener('dbclick', () => {
+        launchProgram(element);
+    });
+
 });

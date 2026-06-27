@@ -4,7 +4,6 @@
     src: url('perfect_dos_vga_437.woff2') format('woff2');
 }
 
-
 body {
     font-family: 'Perfect DOS VGA 437', monospace;
     background-color: #0000AA; 
@@ -144,4 +143,22 @@ li > a:hover {
 .languages-tools {
     list-style-type: square;
     padding-left: 20px;
+}
+
+/* Programs */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    background-color: #FFFFFF;
+    z-index: 5;
+}
+
+.my-trashbin-prog {
+    background-color: white;
+    padding: 30px;
+    position: relative;
+    text-align: center;
 }
