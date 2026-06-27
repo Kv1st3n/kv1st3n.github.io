@@ -48,7 +48,7 @@ draggableElements.forEach((element) => {
         window.addEventListener('pointerup', stopElementDrag);
     });
 
-    element.addEventListener('dbclick', () => {
+    element.addEventListener('dblclick', () => {
         launchProgram(element);
     });
 

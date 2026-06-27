@@ -163,10 +163,16 @@ li > a:hover {
 .overlay {
     display: none;
     position: fixed;
-    top: 20px;
-    left: 50px;
-    background-color: #FFFFFF;
-    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    border: 4px double #C0C0C0;
+    z-index: 100;
+}
+
+.overlay.active {
+    display: block;
 }
 
 .my-trashbin-prog {
