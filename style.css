@@ -189,6 +189,11 @@ li > a:hover {
     color: #FFFFFF;
 }
 
+.my-trashbin-prog p {
+    margin-top: 5px;
+    color: #FFFFFF;
+}
+
 /* 2. Style and position the close button */
 .close-btn {
     position: absolute;
