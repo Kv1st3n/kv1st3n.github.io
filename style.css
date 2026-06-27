@@ -194,6 +194,19 @@ li > a:hover {
     color: #FFFFFF;
 }
 
+.my-computer-prog {
+    background-color: #000000;
+    padding: 30px;
+    position: relative;
+    text-align: center;
+    min-width: 300px;
+}
+
+.my-computer-prog h2 {
+    margin-top: 0;
+    color: #FFFFFF;
+}
+
 /* 2. Style and position the close button */
 .close-btn {
     position: absolute;

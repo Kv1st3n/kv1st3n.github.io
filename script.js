@@ -1,10 +1,15 @@
 const draggableElements = document.querySelectorAll(".draggable-window");
 const popupOverlay = document.getElementById('desktop-programs-overlay');
-const closeBtn = document.getElementById('closeTrashBin');
+
+const closeBtnArray = ['closeTrashBin','closeMyComputer'];
+
+const closeBtn = document.getElementById(closeBtnArray);
 
 /* will make windows popup on click whenever a user clicks on a program*/
 function launchProgram(element) {
     if (element.classList.contains('my-trashbin')) {
+        popupOverlay.classList.add('active');
+    } else if (element.classList.contains('my-computer')) {
         popupOverlay.classList.add('active');
     }
 }
