@@ -3,18 +3,14 @@ const popupOverlay = document.getElementById('desktop-programs-overlay');
 
 /* will make windows popup on click whenever a user clicks on a program*/
 function launchProgram(element) {
-
     if (element.classList.contains('my-trashbin')) {
         popupOverlay.classList.add('active');
     }
 }
 
 /* Will make the opened window close by turning its visibility to none*/
-function closeProgram(element) {
-
-    if (element.classList.contains('my-trashbin')) {
-        popupOverlay.classList.remove('active');
-    }
+function closeProgram() {
+    popupOverlay.classList.remove('active');
 }
 
 if (closeBtn) {
