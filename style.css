@@ -186,6 +186,8 @@ li > a:hover {
     border: 4px double #C0C0C0;
     color: #C0C0C0;
     pointer-events: auto; 
+    width: max-content; 
+    max-width: 90vw;
 }
 
 .program-window.active {
@@ -198,6 +200,8 @@ li > a:hover {
     position: relative; 
     text-align: center;
     min-width: 300px;
+    width: 320px; 
+    box-sizing: border-box;
 }
 
 .my-trashbin-prog h2 {
