@@ -194,7 +194,7 @@ li > a:hover {
     display: block !important;
 }
 
-.my-trashbin-prog, .my-computer-prog {
+.my-trashbin-prog, .my-computer-prog, .my-empty-folder-prog, .my-project-folder-prog {
     background-color: #000000;
     padding: 30px;
     position: relative; 
@@ -224,6 +224,26 @@ li > a:hover {
 
 .my-computer-prog h2 {
     margin-top: 0;
+    color: #FFFFFF;
+}
+
+.my-empty-folder-prog h2 {
+    margin-top: 0;
+    color: #FFFFFF;
+}
+
+.my-empty-folder-prog p {
+    margin-top: 5px;
+    color: #FFFFFF;
+}
+
+.my-project-folder-prog h2 {
+    margin-top: 0;
+    color: #FFFFFF;
+}
+
+.my-project-folder-prog p {
+    margin-top: 5px;
     color: #FFFFFF;
 }
 
