@@ -24,7 +24,8 @@ body {
     z-index: 10;   
 }
 
-.my-trashbin, .my-computer, .my-empty-folder, .my-projects-folder, .program-shortcut {
+.my-trashbin, .my-computer, .my-empty-folder, .my-projects-folder, .program-shortcut,
+.my-trashbin-prog {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +35,8 @@ body {
     cursor: grab;
 }
 
-.my-trashbin:active, .my-computer:active, .my-empty-folder:active, .my-projects-folder:active, .program-shortcut:active {
+.my-trashbin:active, .my-computer:active, .my-empty-folder:active, .my-projects-folder:active, .program-shortcut:active,
+.my-trashbin-prog:active {
     cursor: grabbing;
 }
 
