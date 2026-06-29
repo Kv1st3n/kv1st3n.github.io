@@ -17,6 +17,12 @@ function launchProgram(element) {
     } 
     else if (element.classList.contains('my-computer')) {
         document.getElementById('prog-computer').classList.add('active');
+    } 
+    else if (element.classList.contains('my-empty-folder')) {
+        document.getElementById('prog-empty-folder').classList.add('active');
+    }
+    else if (element.classList.contains('my-projects-folder')) {
+        document.getElementById('prog-project-folder').classList.add('active');
     }
 }
 
