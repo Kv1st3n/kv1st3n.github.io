@@ -4,7 +4,11 @@ const allProgramWindows = document.querySelectorAll('.program-window');
 
 /* will make windows popup on click whenever a user clicks on a program*/
 function launchProgram(element) {
-    allProgramWindows.forEach(win => win.classList.remove('active'));
+    allProgramWindows.forEach(win => {
+        win.classList.remove('active');
+        win.style.top = '25%';
+        win.style.left = '35%';
+    });
 
     popupOverlay.classList.add('active');
 
@@ -63,5 +67,35 @@ draggableElements.forEach((element) => {
 
     element.addEventListener('dblclick', () => {
         launchProgram(element);
+    });
+});
+
+const draggablePrograms = document.querySelectorAll(".draggable-program");
+
+draggablePrograms.forEach((program) => {
+    let programOffsetX = 0;
+    let programOffsetY = 0;
+
+    program.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('.close-btn')) return;
+
+        program.setPointerCapture(e.pointerId);
+        
+        programOffsetX = e.clientX - program.offsetLeft;
+        programOffsetY = e.clientY - program.offsetTop;
+
+        const onProgramDrag = (moveEvent) => {
+            program.style.left = `${moveEvent.clientX - programOffsetX}px`;
+            program.style.top = `${moveEvent.clientY - programOffsetY}px`;
+        };
+
+        const stopProgramDrag = (upEvent) => {
+            program.releasePointerCapture(upEvent.pointerId);
+            window.removeEventListener('pointermove', onProgramDrag);
+            window.removeEventListener('pointerup', stopProgramDrag);
+        };
+
+        window.addEventListener('pointermove', onProgramDrag);
+        window.addEventListener('pointerup', stopProgramDrag);
     });
 });

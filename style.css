@@ -165,14 +165,12 @@ li > a:hover {
 .overlay {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #000000;
-    border: 4px double #C0C0C0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 100;
-
-    color: #C0C0C0;
+    pointer-events: none;
 }
 
 .overlay.active {
@@ -181,13 +179,20 @@ li > a:hover {
 
 .program-window {
     display: none;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    background-color: #000000;
+    border: 4px double #C0C0C0;
+    color: #C0C0C0;
+    pointer-events: auto; 
 }
 
 .program-window.active {
     display: block !important;
 }
 
-.my-trashbin-prog {
+.my-trashbin-prog, .my-computer-prog {
     background-color: #000000;
     padding: 30px;
     position: relative; 
@@ -229,25 +234,19 @@ li > a:hover {
     font-family: 'Perfect DOS VGA 437', monospace;
     font-size: 1rem;
     cursor: pointer;
+    z-index: 110;
 }
 
 .close-btn:hover {
     color: #FFFF00;
 }
 
-.my-trashbin-prog, .my-computer-prog {
+/*Draggable programs*/
+.draggable-program {
     user-select: none;
     cursor: grab;
 }
 
-.my-trashbin-prog, .my-computer-prog {
-    cursor: grabbing;
-}
-
-.draggable-program[role="button"] {
-    cursor: grab;
-}
-
-.draggable-window[role="button"]:active {
+.draggable-program:active {
     cursor: grabbing;
 }
