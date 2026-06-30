@@ -1,7 +1,6 @@
 const draggableElements = document.querySelectorAll(".draggable-window");
 const popupOverlay = document.getElementById('desktop-programs-overlay');
 const allProgramWindows = document.querySelectorAll('.program-window');
-const resizer = document.querySelectorAll('.program-resizer');
 
 /* will make windows popup on click whenever a user clicks on a program*/
 function launchProgram(element) {
@@ -116,35 +115,43 @@ draggablePrograms.forEach((program) => {
     });
 });
 
-resizer.addEventListener('pointerdown', initResize);
+const resizers = document.querySelectorAll('.program-resizer');
 
-function initResize(e) {
-    e.preventDefault();
-
-    const startWidth = windowElement.offsetWidth;
-    const startHeight = windowElement.offsetHeight;
-    const startX = e.clientX;
-    const startY = e.clientY;
-
-    document.addEventListener('pointermove', resizeWindow);
-    document.addEventListener('pointerup', stopResize);
-
-    function resizeWindow(e) {
-        const newWidth = startWidth + (e.clientX - startX);
-        const newHeight = startHeight + (e.clientY - startY);
-
-        if (newWidth > 150) {
-        windowElement.style.width = newWidth + 'px';
-        }
-        if (newHeight > 100) {
-        windowElement.style.height = newHeight + 'px';
-        }
-    }
+resizers.forEach((handle) => {
+    handle.addEventListener('pointerdown', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
 
 
-    function stopResize() {
-        document.removeEventListener('pointermove', resizeWindow);
-        document.removeEventListener('pointerup', stopResize);
-    }
-}
+        const windowElement = handle.closest('.program-window');
+        
+        const startWidth = windowElement.offsetWidth;
+        const startHeight = windowElement.offsetHeight;
+        const startX = e.clientX;
+        const startY = e.clientY;
 
+        const resizeWindow = (moveEvent) => {
+            const newWidth = startWidth + (moveEvent.clientX - startX);
+            const newHeight = startHeight + (moveEvent.clientY - startY);
+
+            if (newWidth > 200) {
+                windowElement.style.width = newWidth + 'px';
+
+                const innerShell = windowElement.querySelector('.my-trashbin-prog, .my-computer-prog, .my-empty-folder-prog, .my-project-folder-prog, .my-cable-shark-prog, .my-data-science-prog, .my-finance-prog');
+                if (innerShell) innerShell.style.width = '100%';
+            }
+            if (newHeight > 120) {
+                windowElement.style.height = newHeight + 'px';
+            }
+        };
+
+        const stopResize = () => {
+            document.removeEventListener('pointermove', resizeWindow);
+            document.removeEventListener('pointerup', stopResize);
+        };
+
+        document.addEventListener('pointermove', resizeWindow);
+        document.addEventListener('pointerup', stopResize);
+
+    });
+});

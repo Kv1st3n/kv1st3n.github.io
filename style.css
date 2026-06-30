@@ -192,14 +192,18 @@ li > a:hover {
     border: 4px double #C0C0C0;
     color: #C0C0C0;
     pointer-events: auto; 
-    width: max-content; 
     max-width: 90vw;
-    overflow: hidden;
 }
 
-.resizer {
+.program-resizer {
     position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 15px;
+    height: 15px;
     cursor: se-resize;
+    background: linear-gradient(135deg, transparent 40%, #C0C0C0 40%, #C0C0C0 60%, transparent 60%, transparent 80%, #C0C0C0 80%);
+    z-index: 120;
 }
 
 .program-window.active {
