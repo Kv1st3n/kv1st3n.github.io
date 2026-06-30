@@ -24,7 +24,8 @@ body {
     z-index: 10;   
 }
 
-.my-trashbin, .my-computer, .my-empty-folder, .my-projects-folder, .my-cable-shark, .program-shortcut {
+.my-trashbin, .my-computer, .my-empty-folder, .my-projects-folder, .my-cable-shark, 
+.my-data-science, .program-shortcut {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,12 +36,12 @@ body {
 }
 
 .my-trashbin:active, .my-computer:active, .my-empty-folder:active, .my-projects-folder:active, 
-.my-cable-shark:active, .program-shortcut:active {
+.my-cable-shark:active, .my-data-science:active, .program-shortcut:active {
     cursor: grabbing;
 }
 
 .my-trashbin img, .my-computer img, .my-empty-folder img, .my-projects-folder img, 
-.my-cable-shark img, .program-shortcut img {
+.my-cable-shark img, .my-data-science img, .program-shortcut img {
     width: 32px;
     height: 32px;
     display: block;
@@ -52,6 +53,7 @@ body {
 .my-empty-folder:hover .icon-text, 
 .my-projects-folder:hover .icon-text,
 .my-cable-shark:hover .icon-text,
+.my-data-science:hover .icon-text,
 .program-shortcut:hover .icon-text {
     background-color: #000000;
     color: #FFFF00;
@@ -198,7 +200,7 @@ li > a:hover {
 }
 
 .my-trashbin-prog, .my-computer-prog, .my-empty-folder-prog, .my-project-folder-prog,
-.my-cable-shark-prog {
+.my-cable-shark-prog, .my-data-science-prog {
     background-color: #000000;
     padding: 30px;
     position: relative; 
@@ -257,6 +259,16 @@ li > a:hover {
 }
 
 .my-cable-shark-prog p {
+    margin-top: 5px;
+    color: #FFFFFF;
+}
+
+.my-data-science-prog h2 {
+    margin-top: 0;
+    color: #FFFFFF;
+}
+
+.my-data-science-prog p {
     margin-top: 5px;
     color: #FFFFFF;
 }

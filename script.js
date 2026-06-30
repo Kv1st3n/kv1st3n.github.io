@@ -27,6 +27,10 @@ function launchProgram(element) {
     else if (element.classList.contains('my-cable-shark')) {
         document.getElementById('prog-cable-shark').classList.add('active');
     }
+    else if (element.classList.contains('my-data-science')) {
+        document.getElementById('prog-data-science').classList.add('active');
+
+    }
 }
 
 /* Will make the opened window close by turning its visibility to none*/
