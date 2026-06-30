@@ -194,6 +194,12 @@ li > a:hover {
     pointer-events: auto; 
     width: max-content; 
     max-width: 90vw;
+    overflow: hidden;
+}
+
+.resizer {
+    position: absolute;
+    cursor: se-resize;
 }
 
 .program-window.active {
