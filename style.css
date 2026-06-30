@@ -198,7 +198,7 @@ li > a:hover {
 }
 
 .my-trashbin-prog, .my-computer-prog, .my-empty-folder-prog, .my-project-folder-prog,
-.my-project-folder-prog {
+.my-cable-shark-prog {
     background-color: #000000;
     padding: 30px;
     position: relative; 
@@ -251,12 +251,12 @@ li > a:hover {
     color: #FFFFFF;
 }
 
-.my-project-folder-prog h2 {
+.my-cable-shark-prog h2 {
     margin-top: 0;
     color: #FFFFFF;
 }
 
-.my-project-folder-prog p {
+.my-cable-shark-prog p {
     margin-top: 5px;
     color: #FFFFFF;
 }
