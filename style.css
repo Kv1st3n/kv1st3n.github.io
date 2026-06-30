@@ -24,7 +24,7 @@ body {
     z-index: 10;   
 }
 
-.my-trashbin, .my-computer, .my-empty-folder, .my-projects-folder, .program-shortcut {
+.my-trashbin, .my-computer, .my-empty-folder, .my-projects-folder, .my-cable-shark, .program-shortcut {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,11 +34,13 @@ body {
     cursor: grab;
 }
 
-.my-trashbin:active, .my-computer:active, .my-empty-folder:active, .my-projects-folder:active, .program-shortcut:active {
+.my-trashbin:active, .my-computer:active, .my-empty-folder:active, .my-projects-folder:active, 
+.my-cable-shark:active, .program-shortcut:active {
     cursor: grabbing;
 }
 
-.my-trashbin img, .my-computer img, .my-empty-folder img, .my-projects-folder img, .program-shortcut img {
+.my-trashbin img, .my-computer img, .my-empty-folder img, .my-projects-folder img, 
+.my-cable-shark img, .program-shortcut img {
     width: 32px;
     height: 32px;
     display: block;
@@ -49,6 +51,7 @@ body {
 .my-computer:hover .icon-text, 
 .my-empty-folder:hover .icon-text, 
 .my-projects-folder:hover .icon-text,
+.my-cable-shark:hover .icon-text,
 .program-shortcut:hover .icon-text {
     background-color: #000000;
     color: #FFFF00;
@@ -116,7 +119,7 @@ h1 {
 
 #about-me-text {
     word-break: break-all;
-    overflow-wrap: normal;
+    overflow-wrap: break-word;
 }
 
 /* Master Projects Window Framework */
@@ -194,7 +197,8 @@ li > a:hover {
     display: block !important;
 }
 
-.my-trashbin-prog, .my-computer-prog, .my-empty-folder-prog, .my-project-folder-prog {
+.my-trashbin-prog, .my-computer-prog, .my-empty-folder-prog, .my-project-folder-prog,
+.my-project-folder-prog {
     background-color: #000000;
     padding: 30px;
     position: relative; 
@@ -233,6 +237,16 @@ li > a:hover {
 }
 
 .my-empty-folder-prog p {
+    margin-top: 5px;
+    color: #FFFFFF;
+}
+
+.my-project-folder-prog h2 {
+    margin-top: 0;
+    color: #FFFFFF;
+}
+
+.my-project-folder-prog p {
     margin-top: 5px;
     color: #FFFFFF;
 }

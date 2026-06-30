@@ -24,6 +24,9 @@ function launchProgram(element) {
     else if (element.classList.contains('my-projects-folder')) {
         document.getElementById('prog-project-folder').classList.add('active');
     }
+    else if (element.classList.contains('my-cable-shark')) {
+        document.getElementById('prog-cable-shark').classList.add('active');
+    }
 }
 
 /* Will make the opened window close by turning its visibility to none*/
