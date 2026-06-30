@@ -1,3 +1,13 @@
+import { initTrashBin } from './apps/trashbin.js';
+import { initCableShark} from './apps/cableShark.js';
+import { initFinance} from './apps/finance.js';
+import { initDataScience} from './apps/dataScience.js';
+
+initTrashBin();
+initCableShark();
+initFinance();
+initDataScience();
+
 const draggableElements = document.querySelectorAll(".draggable-window");
 const popupOverlay = document.getElementById('desktop-programs-overlay');
 const allProgramWindows = document.querySelectorAll('.program-window');
