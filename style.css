@@ -116,6 +116,7 @@ h1 {
 
 #about-me-text {
     word-break: break-all;
+    overflow-wrap: normal;
 }
 
 /* Master Projects Window Framework */
