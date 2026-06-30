@@ -29,7 +29,9 @@ function launchProgram(element) {
     }
     else if (element.classList.contains('my-data-science')) {
         document.getElementById('prog-data-science').classList.add('active');
-
+    } 
+    else if (element.classList.contains('my-finance')) {
+        document.getElementById('prog-finance-app').classList.add('active');
     }
 }
 
