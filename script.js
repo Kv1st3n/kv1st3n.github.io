@@ -1,7 +1,7 @@
-import { initTrashBin } from './apps/trashbin.js';
-import { initCableShark} from './apps/cableShark.js';
+//import { initTrashBin } from './apps/trashbin.js';
+//import { initCableShark} from './apps/cableShark.js';
 import { initFinance} from './apps/finance.js';
-import { initDataScience} from './apps/dataScience.js';
+//import { initDataScience} from './apps/dataScience.js';
 
 initTrashBin();
 initCableShark();
