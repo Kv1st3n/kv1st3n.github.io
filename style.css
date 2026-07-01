@@ -292,18 +292,22 @@ li > a:hover {
     border: 4px double #A8A8A8;
 }
 
+.my-finance-prog .close-btn {
+    color:#000000;
+}
+
 .buy-btn:hover, .sell-btn:hover {
     color:#000000; border: dotted;    
 }
 
 .my-finance-prog h2 {
     margin-top: 0;
-    color: #FFFFFF;
+    color: #000000;
 }
 
 .my-finance-prog p {
     margin-top: 5px;
-    color: #FFFFFF;
+    color: #000000;
 }
 
 /* Style and position the close button */
