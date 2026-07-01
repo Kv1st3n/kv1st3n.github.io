@@ -54,18 +54,21 @@ function drawFinanceChart() {
 
     const ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = '#ff4757';
-    ctx.fillRect(50, 50, 150, 100);
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.strokeStyle = '#2ed573';
-    ctx.lineWidth = 5;
-    ctx.strokeRect(250, 50, 150, 100);
+    ctx.strokeStyle = '#003300';
+    ctx.lineWidth = 1;
+    for (let i = 20; i < canvas.width; i += 20) {
+        ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke();
+    }
+    for (let i = 20; i < canvas.height; i += 20) {
+        ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke();
+    }
 
-    ctx.beginPath();
-    ctx.arc(550, 100, 50, 0, Math.PI * 2); 
-    ctx.fillStyle = '#1e90ff';
-    ctx.fill();
-    ctx.closePath();
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
 }
 
 function simulatedMarketTick() {
