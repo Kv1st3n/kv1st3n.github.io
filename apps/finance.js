@@ -1,4 +1,4 @@
-let currentBalance = 100;
+let currentBalance = 100000;
 let stockPrice = 500;
 let currentOption = [1, 5, 10, 100];
 let currentOptionChoice = currentOption[0]; // Defaults to 1 share
