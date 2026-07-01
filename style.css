@@ -289,15 +289,26 @@ li > a:hover {
 /* Finance App */
 .my-finance-prog {
     background-color: #C0C0C0;
-    border: 4px double #A8A8A8;
+    border: 4px double #868686;
 }
 
 .my-finance-prog .close-btn {
-    color:#000000;
+    color: #FF5555;
+    font-weight: bold;
 }
 
-.buy-btn:hover, .sell-btn:hover {
-    color:#000000; border: dotted;    
+.my-finance-prog .close-btn:hover {
+    color: #FFFFFF;
+    background-color: #AA0000;
+    outline: 2px solid #FF5555;
+}
+
+.buy-btn:hover {
+    color:#008b00; border: dotted;    
+}
+
+.sell-btn:hover {
+    color:#AA0000; border: dotted;  
 }
 
 .my-finance-prog h2 {
