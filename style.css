@@ -290,47 +290,102 @@ li > a:hover {
 .my-finance-prog {
     background-color: #C0C0C0;
     border: 4px double #868686;
+    width: 550px;
+    padding: 15px;
+}
+.my-finance-prog h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #000000;
+    text-align: left;
 }
 
-.my-finance-prog .close-btn {
-    color: #FF5555;
+.finance-grid-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 15px;
+    align-items: start;
+}
+
+.finance-left-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stock-price-main {
+    margin: 0;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
-.my-finance-prog .close-btn:hover {
-    color: #FFFFFF;
-    background-color: #AA0000;
-    outline: 2px solid #FF5555;
+.finance-chart {
+    background-color: #000000;
+    color: #55FF55; 
+    border: 2px inset #FFFFFF;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 0;
+}
+
+.finance-right-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: right;
+}
+
+.finance-right-pane p {
+    margin: 0;
+}
+
+.finance-right-pane .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.stock-amount-select {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #000000;
+    font-family: 'Perfect DOS VGA 437', monospace;
+    padding: 3px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buy-btn, .sell-btn {
+    font-family: 'Perfect DOS VGA 437', monospace;
+    background-color: #C0C0C0;
+    color: #000000;
+    border: 2px solid;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF; 
+    padding: 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buy-btn:active, .sell-btn:active {
+    border-color: #808080 #FFFFFF #FFFFFF #808080; /* Sunken active click */
 }
 
 .buy-btn:hover {
-    color:#008b00; border: dotted;    
+    color: #008b00;
+    border-style: dotted;
 }
 
 .sell-btn:hover {
-    color:#AA0000; border: dotted;  
+    color: #AA0000;
+    border-style: dotted;
 }
 
-.ui-balance, .ui-stock-price, .ui-owned-shares {
-    background-color: #FFFFFF;
-    color: #000000;
-    padding: 4px 6px; 
-    border: 1px solid #000000; 
-    display: inline-block;
-}
-
-.ui-finance-text {
-    color: #000000;
-}
-
-.my-finance-prog h2 {
-    margin-top: 0;
-    color: #000000;
-}
-
-.my-finance-prog p {
-    margin-top: 5px;
-    color: #000000;
+.shares-owned-row {
+    margin-top: 5px !important;
 }
 
 /* Style and position the close button */

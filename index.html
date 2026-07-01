@@ -95,21 +95,36 @@
                 <button id="closeMyFinanceApp" class="close-btn">[X]</button>
                 <h2>Finance App</h2>
                 
-                <p class="ui-finance-text">Balance $<span class="ui-balance">100.0</span></p>
-                <p class="ui-finance-text">Stock price: $<span class="ui-stock-price"> 500.0</span></p>
-                <p class="ui-finance-text">Shares owned: <span class="ui-owned-shares">0</span></p>
+                <div class="finance-grid-container">
+                    
+                    <div class="finance-left-pane">
+                        <p class="ui-finance-text stock-price-main">
+                            Stock price: $<span class="ui-stock-price">500.0</span>
+                        </p>
+                        <div class="finance-chart">
+                            &lt;finance chart&gt;
+                        </div>
+                    </div>
 
-                <div class="controls"> 
-                    <select class="stock-amount-select">
-                        <option value="1">1 Share</option>
-                        <option value="5">5 Shares</option>
-                        <option value="10">10 Shares</option>
-                        <option value="100">100 Shares</option>
-                    </select>
-                    <button class="buy-btn">BUY</button>
-                    <button class="sell-btn">SELL</button>
+                    <div class="finance-right-pane">
+                        <p class="ui-finance-text">Balance $<span class="ui-balance">100.0</span></p>
+                        
+                        <div class="controls"> 
+                            <select class="stock-amount-select">
+                                <option value="1">1 Share</option>
+                                <option value="5">5 Shares</option>
+                                <option value="10">10 Shares</option>
+                                <option value="100">100 Shares</option>
+                            </select>
+                            <button class="buy-btn">BUY</button>
+                            <button class="sell-btn">SELL</button>
+                        </div>
+
+                        <p class="ui-finance-text shares-owned-row">
+                            Shares owned: <span class="ui-owned-shares">0</span>
+                        </p>
+                    </div>
                 </div>
-
                 <div class="program-resizer"></div>
             </div>
 
