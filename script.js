@@ -3,10 +3,10 @@
 import { initFinance} from './apps/finance.js';
 //import { initDataScience} from './apps/dataScience.js';
 
-initTrashBin();
-initCableShark();
+//initTrashBin();
+//initCableShark();
 initFinance();
-initDataScience();
+//initDataScience();
 
 const draggableElements = document.querySelectorAll(".draggable-window");
 const popupOverlay = document.getElementById('desktop-programs-overlay');
