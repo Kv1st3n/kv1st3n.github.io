@@ -6,16 +6,39 @@ let ownedShares = 0;
 
 export function initFinance() {
     const windowEl = document.getElementById('prog-finance-app');
+
     if (!windowEl) {
         return;
     }
     console.log("Finance App System Initialized...");
 
     setupFinanceListener(windowEl);
+
+    setInterval(() => {
+        simulatedMarketTick();
+        updateFinanceUI(windowEl);
+    }, 1500);
 }
 
 function setupFinanceListener(windowEl) {
+    const buyBtn = windowEl.querySelector('.buy-btn');
+    const sellBtn = windowEl.querySelector('.sell-btn');
+    const amountSelect = windowEl.querySelector('.stock-amount-select');
 
+    if (buyBtn) {
+        buyBtn.addEventListener('click', () => buyMarketStock(windowEl));
+    }
+
+    if (sellBtn) {
+        sellBtn.addEventListener('click', () => sellMarketStock(windowEl));
+    }
+
+    if (amountSelect) {
+        amountSelect.addEventListener('change', (e) => {
+            currentOptionChoice = parseInt(e.target.value);
+            console.log("Selected amount altered to:", currentOptionChoice);
+        });
+    }
 }
 
 function simulatedMarketTick() {
@@ -58,5 +81,19 @@ function sellMarketStock(windowEl) {
 }
 
 function updateFinanceUI(windowEl) {
+    const balanceDisplay = windowEl.querySelector('.ui-balance');
+    const priceDisplay = windowEl.querySelector('.ui-stock-price');
+    const portfolioDisplay = windowEl.querySelector('.ui-owned-shares');
 
+    if (balanceDisplay) {
+        balanceDisplay.textContent = currentBalance.toFixed(2);
+    }
+
+    if (priceDisplay) {
+        priceDisplay.textContent = stockPrice.toFixed(2);
+    }
+
+    if (portfolioDisplay) {
+        portfolioDisplay.textContent = ownedShares;
+    }
 }

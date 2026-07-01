@@ -94,7 +94,22 @@
             <div id="prog-finance-app" class="program-window my-finance-prog draggable-program">
                 <button id="closeMyFinanceApp" class="close-btn">[X]</button>
                 <h2>Finance App</h2>
-                <p>No stocks</p>
+                
+                <p>Balance $<span class=".ui-balance">100.0</span></p>
+                <p>Stock price: $<span class="ui-stock-price"> 500.0</span></p>
+                <p>Shares owned: <span class="ui-owned-shares">0</span></p>
+
+                <div class="controls"> 
+
+                </div>
+                    <select class="stock-amount-select">
+                        <option value="1">1 Share</option>
+                        <option value="5">5 Shares</option>
+                        <option value="10">10 Shares</option>
+                        <option value="100">100 Shares</option>
+                    </select>
+                    <button class="buy-btn">BUY</button>
+                    <button class="sell-btn">SELL</button>
                 <div class="program-resizer"></div>
             </div>
 
