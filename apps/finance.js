@@ -48,7 +48,7 @@ function setupFinanceListener(windowEl) {
 
 // expand with randomness, for market crash or exceeding growth
 function simulatedMarketTick() {
-    stockPrice += (Math.random() - 0.5) * 50;
+    stockPrice += (Math.random() - 5.5) * 50;
     if (stockPrice < 1) {
         stockPrice = 1;
     }
