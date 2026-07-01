@@ -26,11 +26,11 @@ function setupFinanceListener(windowEl) {
     const amountSelect = windowEl.querySelector('.stock-amount-select');
 
     if (buyBtn) {
-        buyBtn.addEventListener('click', () => buyMarketStock(windowEl));
+        buyBtn.addEventListener('pointerdown', () => buyMarketStock(windowEl));
     }
 
     if (sellBtn) {
-        sellBtn.addEventListener('click', () => sellMarketStock(windowEl));
+        sellBtn.addEventListener('pointerdown', () => sellMarketStock(windowEl));
     }
 
     if (amountSelect) {
