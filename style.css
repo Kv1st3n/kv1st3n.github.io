@@ -314,9 +314,13 @@ li > a:hover {
 .ui-balance, .ui-stock-price, .ui-owned-shares {
     background-color: #FFFFFF;
     color: #000000;
-    padding: 2px 6px; 
+    padding: 4px 6px; 
     border: 1px solid #000000; 
     display: inline-block;
+}
+
+.ui-finance-text {
+    color: #000000;
 }
 
 .my-finance-prog h2 {
