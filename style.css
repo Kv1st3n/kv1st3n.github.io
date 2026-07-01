@@ -311,6 +311,11 @@ li > a:hover {
     color:#AA0000; border: dotted;  
 }
 
+.ui-balance, .ui-stock-price, .ui-owned-shares {
+    background-color: #FFFFFF;
+    border: #000000;
+}
+
 .my-finance-prog h2 {
     margin-top: 0;
     color: #000000;
