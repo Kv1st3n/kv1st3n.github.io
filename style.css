@@ -185,7 +185,7 @@ li > a:hover {
 
 .program-window {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 25%;
     left: 35%;
     background-color: #000000;
@@ -193,6 +193,8 @@ li > a:hover {
     color: #C0C0C0;
     pointer-events: auto; 
     max-width: 90vw;
+    overflow: auto; 
+    box-sizing: border-box;
 }
 
 .program-resizer {
