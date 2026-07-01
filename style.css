@@ -287,6 +287,15 @@ li > a:hover {
 }
 
 /* Finance App */
+.my-finance-prog {
+    background-color: #C0C0C0;
+    border: 4px double #A8A8A8;
+}
+
+.buy-btn:hover, .sell-btn:hover {
+    color:#000000; border: dotted;    
+}
+
 .my-finance-prog h2 {
     margin-top: 0;
     color: #FFFFFF;
