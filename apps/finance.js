@@ -4,6 +4,9 @@ let currentOption = [1, 5, 10, 100];
 let currentOptionChoice = currentOption[0]; // Defaults to 1 share
 let ownedShares = 0;
 
+let priceHistory = [500]; 
+const MAX_POINTS = 30;
+
 export function initFinance() {
     const windowEl = document.getElementById('prog-finance-app');
 
@@ -17,6 +20,7 @@ export function initFinance() {
     setInterval(() => {
         simulatedMarketTick();
         updateFinanceUI(windowEl);
+        drawFinanceChart();
     }, 1500);
 }
 
@@ -39,6 +43,29 @@ function setupFinanceListener(windowEl) {
             console.log("Selected amount altered to:", currentOptionChoice);
         });
     }
+}
+
+function drawFinanceChart() {
+    const canvas = document.getElementById('financeChart');
+
+    if (!canvas) {
+        return;
+    }
+
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#ff4757';
+    ctx.fillRect(50, 50, 150, 100);
+
+    ctx.strokeStyle = '#2ed573';
+    ctx.lineWidth = 5;
+    ctx.strokeRect(250, 50, 150, 100);
+
+    ctx.beginPath();
+    ctx.arc(550, 100, 50, 0, Math.PI * 2); 
+    ctx.fillStyle = '#1e90ff';
+    ctx.fill();
+    ctx.closePath();
 }
 
 function simulatedMarketTick() {
