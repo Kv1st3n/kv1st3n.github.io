@@ -66,6 +66,12 @@ function drawFinanceChart() {
         ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke();
     }
 
+    ctx.strokeStyle = '#48c500ff';
+    ctx.beginPath();
+    ctx.moveTo(50,50);
+    ctx.lineTo(50,50);
+
+
     ctx.stroke();
     ctx.shadowBlur = 0;
 
