@@ -45,6 +45,18 @@ function setupFinanceListener(windowEl) {
     }
 }
 
+function simulatedMarketTick() {
+    stockPrice += (Math.random() - 0.5) * 5;
+    if (stockPrice < 1) {
+        stockPrice = 1;
+    }
+
+    priceHistory.push(stockPrice);
+    if (priceHistory.length > MAX_POINTS) {
+        priceHistory.shift();
+    }
+}
+
 function drawFinanceChart() {
     const canvas = document.getElementById('financeChart');
 
@@ -66,22 +78,34 @@ function drawFinanceChart() {
         ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(canvas.width, i); ctx.stroke();
     }
 
-    ctx.strokeStyle = '#48c500ff';
+    if (priceHistory.length < 2) {
+        return;
+    }
+
+    const minPrice = Math.min(...priceHistory) * 0.95;
+    const maxPrice = Math.max(...priceHistory) * 1.05;
+    const priceRange = maxPrice - minPrice || 1;
+
+    ctx.strokeStyle = '#55FF55';
+    ctx.lineWidth = 2;
+    ctx.shadowBlur = 4;
+    ctx.shadowColor = '#55FF55';
     ctx.beginPath();
-    ctx.moveTo(50,50);
-    ctx.lineTo(50,50);
 
+    const xSpacing = canvas.width / (MAX_POINTS - 1);
 
+    priceHistory.forEach((price, index) => {
+        const x = index * xSpacing;
+        const y = canvas.height - ((price - minPrice) / priceRange) * canvas.height;
+
+        if (index === 0) {
+            ctx.moveTo(x, y);
+        } else {
+            ctx.lineTo(x, y);
+        }
+    });
     ctx.stroke();
     ctx.shadowBlur = 0;
-
-}
-
-function simulatedMarketTick() {
-    stockPrice += (Math.random() - 0.5) * 5;
-    if (stockPrice < 1) {
-        stockPrice = 1;
-    }
 }
 
 // choose amount to buy / sell 1, 5, 10, 100
