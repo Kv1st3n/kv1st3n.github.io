@@ -272,10 +272,12 @@ li > a:hover {
     background-color: #C0C0C0;
     border: 4px double #868686;
     width: 1100px;
-    max-width: 95vw; 
-    height: 80vh;
+    max-width: 95vw;
+    height: 650px; 
     padding: 15px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
 }
 
 #prog-cable-shark {
@@ -322,8 +324,28 @@ li > a:hover {
 .cable-shark-top-pane {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
+    background-color: #FFFFFF;
+    border: 2px inset #ffffff;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 2px;
+}
+
+.network-activity {
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    white-space: nowrap;
     text-align: left;
+    cursor: pointer;
+    user-select: none;
+}
+
+.network-activity:hover {
+    filter: brightness(0.9);
+    outline: 1px dotted #000000;
 }
 
 #udp-traffic {
@@ -361,11 +383,21 @@ li > a:hover {
     color:#ffffff;
 }
 
+.pane-divider {
+    border: 0;
+    height: 2px;
+    background-color: #808080;
+    margin: 15px 0;
+    width: 100%;
+}
+
 .cable-shark-bottom-pane {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    text-align: left; 
+    flex-grow: 1;
+    background-color: #FFFFFF;
+    border: 2px inset #ffffff;
+    padding: 10px;
+    text-align: left;
+    overflow-y: auto;
 }
 
 /* Data Science */
