@@ -287,6 +287,11 @@ li > a:hover {
     width: 1100px;
 }
 
+.network-activity {
+    background-color:#008b00;
+    color:#000000;
+}
+
 .my-data-science-prog h2 {
     margin-top: 0;
     color: #FFFFFF;
