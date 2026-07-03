@@ -212,8 +212,8 @@ li > a:hover {
     display: block !important;
 }
 
-.my-trashbin-prog, .my-computer-prog, .my-empty-folder-prog, .my-project-folder-prog,
-.my-cable-shark-prog, .my-data-science-prog, .my-finance-prog {
+.my-trashbin-prog, .my-computer-prog, .my-empty-folder-prog, .my-project-folder-prog, 
+.my-data-science-prog {
     background-color: #000000;
     padding: 30px;
     position: relative; 
@@ -266,6 +266,8 @@ li > a:hover {
     color: #FFFFFF;
 }
 
+/* Cable shark */
+
 .my-cable-shark-prog h2 {
     margin-top: 0;
     color: #FFFFFF;
@@ -275,6 +277,8 @@ li > a:hover {
     margin-top: 5px;
     color: #FFFFFF;
 }
+
+/* Data Science */
 
 .my-data-science-prog h2 {
     margin-top: 0;
