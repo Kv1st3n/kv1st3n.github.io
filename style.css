@@ -272,8 +272,9 @@ li > a:hover {
     background-color: #C0C0C0;
     border: 4px double #868686;
     width: 1100px;
-    height: 1100px;
-    padding: 10px;
+    max-width: 95vw; 
+    height: 80vh;
+    padding: 15px;
     box-sizing: border-box;
 }
 
@@ -289,10 +290,21 @@ li > a:hover {
 }
 
 .my-cable-shark-prog .close-btn {
-    color: #FF5555;
+    color: #FF5555 !important;
     font-weight: bold;
-    background: transparent;
-    border: none;
+    background: transparent !important;
+    border: none !important;
+}
+
+.my-cable-shark-prog .close-btn:hover {
+    color: #FFFFFF !important;
+    background-color: #AA0000 !important;
+    outline: 2px solid #FF5555 !important;
+}
+
+.my-cable-shark-prog p {
+    margin-top: 5px;
+    color: #000000 !important;
 }
 
 .cable-shark-grid-container {
