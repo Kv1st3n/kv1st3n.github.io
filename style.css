@@ -276,6 +276,12 @@ li > a:hover {
     box-sizing: border-box;
 }
 
+#prog-cable-shark {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%); 
+}
+
 .my-cable-shark-prog h2 {
     margin-top: 0;
     color: #FFFFFF;
