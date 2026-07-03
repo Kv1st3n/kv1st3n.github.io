@@ -321,7 +321,7 @@ li > a:hover {
 
 .cable-shark-top-pane {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
     text-align: left;
 }
@@ -363,7 +363,7 @@ li > a:hover {
 
 .cable-shark-bottom-pane {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 12px;
     text-align: left; 
 }
