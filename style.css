@@ -288,10 +288,11 @@ li > a:hover {
     color: #FFFFFF;
 }
 
-.prog-cable-shark .close-btn:hover {
-    color: #FFFFFF;
-    background-color: #AA0000;
-    outline: 2px solid #FF5555;
+.my-cable-shark-prog .close-btn {
+    color: #FF5555;
+    font-weight: bold;
+    background: transparent;
+    border: none;
 }
 
 .cable-shark-grid-container {
@@ -304,6 +305,13 @@ li > a:hover {
 .my-cable-shark-prog p {
     margin-top: 5px;
     color: #FFFFFF;
+}
+
+.cable-shark-top-pane {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text-align: left;
 }
 
 #udp-traffic {
@@ -339,6 +347,13 @@ li > a:hover {
 #malformed-traffic {
     background-color:#000000;
     color:#ffffff;
+}
+
+.cable-shark-bottom-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left; 
 }
 
 /* Data Science */
