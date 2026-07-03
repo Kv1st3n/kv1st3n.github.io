@@ -355,6 +355,14 @@ li > a:hover {
     margin: 0;
 }
 
+.finance-right-pane .ui-finance-text {
+    margin: 0;
+    color: #000000;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
 .ui-balance, .ui-stock-price, .ui-owned-shares {
     background-color: #FFFFFF;
     color: #000000;
