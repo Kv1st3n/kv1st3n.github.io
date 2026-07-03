@@ -286,12 +286,40 @@ li > a:hover {
     color: #FFFFFF;
 }
 
-.network-activity {
-    background-color:#008b00;
+#udp-traffic {
+    background-color:#55FFFF;
     color:#000000;
 }
 
+#tcp-traffic {
+    background-color:#000080;
+    color:#000000;
+}
 
+#http-traffic {
+    background-color:#55FF55;
+    color:#000000;
+}
+
+#non-http-traffic {
+    background-color:#d582ff;
+    color:#000000;
+}
+
+#arp-traffic {
+    background-color:#FF9900;
+    color:#000000;
+}
+
+#serious-tcp-traffic {
+    background-color:#FF5555;
+    color:#000000;
+}
+
+#malformed-traffic {
+    background-color:#000000;
+    color:#ffffff;
+}
 
 /* Data Science */
 
