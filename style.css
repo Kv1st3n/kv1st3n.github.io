@@ -271,8 +271,9 @@ li > a:hover {
 .my-cable-shark {
     background-color: #C0C0C0;
     border: 4px double #868686;
-    box-sizing: border-box;
     width: 1100px;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .my-cable-shark-prog h2 {
