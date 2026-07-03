@@ -274,8 +274,6 @@ li > a:hover {
     width: 1100px;
     padding: 10px;
     box-sizing: border-box;
-    display: grid;
-    padding-left: center;
 }
 
 .my-cable-shark-prog h2 {
@@ -283,6 +281,18 @@ li > a:hover {
     color: #FFFFFF;
 }
 
+.my-cable-shark .close-btn:hover {
+    color: #FFFFFF;
+    background-color: #AA0000;
+    outline: 2px solid #FF5555;
+}
+
+.cable-shark-grid-container {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 15px;
+    align-items: start;
+}
 
 .my-cable-shark-prog p {
     margin-top: 5px;
@@ -412,7 +422,6 @@ li > a:hover {
     justify-content: space-between; 
     align-items: center;
 }
-
 
 .ui-balance, .ui-stock-price, .ui-owned-shares {
     background-color: #FFFFFF;
