@@ -280,6 +280,13 @@ li > a:hover {
 
 /* Data Science */
 
+.my-cable-shark {
+    background-color: #C0C0C0;
+    border: 4px double #868686;
+    box-sizing: border-box;
+    width: 1100px;
+}
+
 .my-data-science-prog h2 {
     margin-top: 0;
     color: #FFFFFF;
