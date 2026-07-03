@@ -288,7 +288,8 @@ li > a:hover {
 
 .my-cable-shark-prog h2 {
     margin-top: 0;
-    color: #FFFFFF;
+    color: #000000;
+    text-align: left;
 }
 
 .my-cable-shark-prog .close-btn {
@@ -304,32 +305,17 @@ li > a:hover {
     outline: 2px solid #FF5555 !important;
 }
 
-.my-cable-shark-prog p {
-    margin-top: 5px;
-    color: #000000 !important;
-}
-
-.cable-shark-grid-container {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 15px;
-    align-items: start;
-}
-
-.my-cable-shark-prog p {
-    margin-top: 5px;
-    color: #FFFFFF;
-}
-
 .cable-shark-top-pane {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; 
     border: 2px inset #ffffff;
-    max-height: 300px;
+    max-height: 250px;
     overflow-y: auto;
     padding: 2px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .network-activity {
@@ -341,6 +327,7 @@ li > a:hover {
     text-align: left;
     cursor: pointer;
     user-select: none;
+    margin: 0;
 }
 
 .network-activity:hover {
@@ -355,7 +342,7 @@ li > a:hover {
 
 #tcp-traffic {
     background-color:#000080;
-    color:#000000;
+    color:#FFFFFF;
 }
 
 #http-traffic {
@@ -395,9 +382,16 @@ li > a:hover {
     flex-grow: 1;
     background-color: #FFFFFF;
     border: 2px inset #ffffff;
-    padding: 10px;
+    padding: 12px;
     text-align: left;
     overflow-y: auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.network-stats {
+    margin: 0;
+    color: #000000 !important;
 }
 
 /* Data Science */
