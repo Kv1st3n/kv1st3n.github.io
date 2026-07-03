@@ -293,6 +293,7 @@ li > a:hover {
     border: 4px double #868686;
     width: 550px; 
     padding: 15px;
+    box-sizing: border-box;
 }
 
 .my-finance-prog h2 {
@@ -332,6 +333,7 @@ li > a:hover {
 .stock-price-main {
     margin: 0;
     font-size: 1rem;
+    color: #000000;
 }
 
 #financeChart {
@@ -346,7 +348,7 @@ li > a:hover {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    text-align: right; 
+    text-align: left; 
 }
 
 .finance-right-pane p {
@@ -359,6 +361,8 @@ li > a:hover {
     padding: 4px 6px; 
     border: 1px solid #000000; 
     display: inline-block;
+    min-width: 60px;
+    text-align: right;
 }
 
 .finance-right-pane .controls {
