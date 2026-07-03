@@ -86,10 +86,13 @@
                 <div class="cable-shark-grid-container">
 
                     <div class="cable-shark-top-pane">
-                        <p class="network-activity">Normal</p>
-                        <p class="network-activity">Normal</p>
-                        <p class="network-activity">Abnormal</p>
-                        <p class="network-activity">Normal</p>
+                        <p id="udp-traffic" class="network-activity">Normal</p> <!-- light blue -->
+                        <p id="tcp-traffic" class="network-activity">Normal</p> <!-- dark blue -->
+                        <p id="http-traffic" class="network-activity">Abnormal</p> <!-- light green -->
+                        <p id="non-http-traffic"class="network-activity">Normal</p> <!-- light purple -->
+                        <p id="arp-traffic" class="network-activity">Normal</p>  <!-- orange -->
+                        <p id="serious-tcp--traffic" class="network-activity">Normal</p>  <!-- red -->
+                        <p id="malformed-traffic" class="network-activity">Normal</p>  <!-- black -->
                     </div>
 
                     <div class="cable-shark-bottom-pane">

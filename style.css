@@ -268,6 +268,13 @@ li > a:hover {
 
 /* Cable shark */
 
+.my-cable-shark {
+    background-color: #C0C0C0;
+    border: 4px double #868686;
+    box-sizing: border-box;
+    width: 1100px;
+}
+
 .my-cable-shark-prog h2 {
     margin-top: 0;
     color: #FFFFFF;
@@ -278,19 +285,12 @@ li > a:hover {
     color: #FFFFFF;
 }
 
-/* Data Science */
-
-.my-cable-shark {
-    background-color: #C0C0C0;
-    border: 4px double #868686;
-    box-sizing: border-box;
-    width: 1100px;
-}
-
 .network-activity {
     background-color:#008b00;
     color:#000000;
 }
+
+/* Data Science */
 
 .my-data-science-prog h2 {
     margin-top: 0;
