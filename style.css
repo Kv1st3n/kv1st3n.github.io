@@ -315,7 +315,10 @@ li > a:hover {
     gap: 2px;
     background-color: #FFFFFF; 
     border: 2px inset #ffffff;
-    max-height: 250px;
+
+    flex: 0 0 250px;
+    height: 250px;
+
     overflow-y: auto;
     padding: 2px;
     width: 100%;
@@ -383,7 +386,7 @@ li > a:hover {
 }
 
 .cable-shark-bottom-pane {
-    flex-grow: 0;
+    flex-grow: 1;
     background-color: #FFFFFF;
     border: 2px inset #ffffff;
     padding: 12px;
