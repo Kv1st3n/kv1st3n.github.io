@@ -97,5 +97,4 @@ function updateCablesharkEvents(windowEl) {
     });
 
     eventDisplay.scrollTop = eventDisplay.scrollHeight;
-
 }
