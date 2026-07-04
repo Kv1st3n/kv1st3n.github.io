@@ -1,5 +1,6 @@
 let trackedNetworkActivities = [];
 const maxEvents = 30;
+let captureIntervalId = null;
 
 const PACKET_TYPES = {
     HTTP: { text: "Abnormal · Unencrypted HTTP GET Request", id: "http-traffic" },
@@ -16,20 +17,26 @@ export function initCableShark() {
     if (!windowEl) {
         return;
     }
+
     console.log("Cableshark Initialized...");
 
-    setupCableSharkListener(windowEl);
+    if (captureIntervalId) {
+        clearInterval(captureIntervalId);
+    }
 
-}
+    const eventDisplay = windowEl.querySelector('.cable-shark-top-pane');
+    if (eventDisplay) {
+        eventDisplay.innerHTML = '';
+    }
+    trackedNetworkActivities = [];
 
-function setupCableSharkListener (windowEl) {
     liveCapture(windowEl);
+
 }
 
-function liveCapture() {
-
-    setInterval(() => {
-        networkEvents();
+function liveCapture(windowEl) {
+    captureIntervalId = setInterval(() => {
+        networkEvents(windowEl);
     }, 1500);
 }
 

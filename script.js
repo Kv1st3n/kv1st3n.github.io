@@ -4,7 +4,6 @@ import { initFinance} from './apps/finance.js';
 //import { initDataScience} from './apps/dataScience.js';
 
 //initTrashBin();
-initCableShark();
 initFinance();
 //initDataScience();
 
@@ -36,6 +35,7 @@ function launchProgram(element) {
     }
     else if (element.classList.contains('my-cable-shark')) {
         document.getElementById('prog-cable-shark').classList.add('active');
+        initCableShark();
     }
     else if (element.classList.contains('my-data-science')) {
         document.getElementById('prog-data-science').classList.add('active');
