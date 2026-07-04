@@ -96,6 +96,7 @@ draggableElements.forEach((element) => {
     });
 });
 
+
 const draggablePrograms = document.querySelectorAll(".draggable-program");
 
 draggablePrograms.forEach((program) => {
