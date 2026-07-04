@@ -40,7 +40,7 @@ function liveCapture(windowEl) {
     }, 1500);
 }
 
-function networkEvents() { 
+function networkEvents(windowEl) { 
     // Generates a clean integer between 1 and 100
     let minValue = 1;
     let maxValue = 100;
