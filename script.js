@@ -90,7 +90,7 @@ draggableElements.forEach((element) => {
         window.addEventListener('pointerup', stopElementDrag);
     });
 
-    element.addEventListener('dblclick', () => {
+    element.addEventListener('dblclick', (e) => {
         e.stopPropagation();
         launchProgram(element);
     });
