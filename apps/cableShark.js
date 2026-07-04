@@ -98,3 +98,9 @@ function updateCablesharkEvents(windowEl) {
 
     eventDisplay.scrollTop = eventDisplay.scrollHeight;
 }
+
+export function closeCableShark() {
+    if (captureIntervalId) {
+        clearInterval(captureIntervalId);
+    }
+}

@@ -1,6 +1,6 @@
 //import { initTrashBin } from './apps/trashbin.js';
-import { initCableShark} from './apps/cableShark.js';
-import { initFinance} from './apps/finance.js';
+import { initCableShark, closeCableShark } from './apps/cableShark.js';
+import { initFinance } from './apps/finance.js';
 //import { initDataScience} from './apps/dataScience.js';
 
 //initTrashBin();
@@ -13,42 +13,61 @@ const allProgramWindows = document.querySelectorAll('.program-window');
 
 /* will make windows popup on click whenever a user clicks on a program*/
 function launchProgram(element) {
-    allProgramWindows.forEach(win => {
-        win.classList.remove('active');
-        win.style.top = '';
-        win.style.left = '';
-    });
-
     popupOverlay.classList.add('active');
 
+    allProgramWindows.forEach(win => win.style.zIndex = "5");
+
+    let targetWin = null;
+
     if (element.classList.contains('my-trashbin')) {
-        document.getElementById('prog-trashbin').classList.add('active');
-    } 
+        targetWin = document.getElementById('prog-trashbin');
+    }
     else if (element.classList.contains('my-computer')) {
-        document.getElementById('prog-computer').classList.add('active');
-    } 
+        targetWin = document.getElementById('prog-computer');
+    }
     else if (element.classList.contains('my-empty-folder')) {
-        document.getElementById('prog-empty-folder').classList.add('active');
+        targetWin = document.getElementById('prog-empty-folder');
     }
     else if (element.classList.contains('my-projects-folder')) {
-        document.getElementById('prog-project-folder').classList.add('active');
+        targetWin = document.getElementById('prog-project-folder');
     }
     else if (element.classList.contains('my-cable-shark')) {
-        document.getElementById('prog-cable-shark').classList.add('active');
+        targetWin = document.getElementById('prog-cable-shark');
         initCableShark();
     }
     else if (element.classList.contains('my-data-science')) {
-        document.getElementById('prog-data-science').classList.add('active');
-    } 
+        targetWin = document.getElementById('prog-data-science');
+    }
     else if (element.classList.contains('my-finance')) {
-        document.getElementById('prog-finance-app').classList.add('active');
+        targetWin = document.getElementById('prog-finance-app');
+    }
+
+    if (targetWin) {
+        targetWin.classList.add('active');
+        targetWin.style.zIndex = "10";
     }
 }
 
 /* Will make the opened window close by turning its visibility to none*/
-function closeProgram() {
-    popupOverlay.classList.remove('active');
-    allProgramWindows.forEach(win => win.classList.remove('active'));
+function closeProgram(e) {
+    const windowEl = e.target.closest('.program-window');
+    if (!windowEl) {
+        return;
+    }
+
+    windowEl.classList.remove('active');
+    windowEl.style.top = '';
+    windowEl.style.left = '';
+
+    if (windowEl.id === 'prog-cable-shark') {
+        closeWireShark();
+    }
+
+    // only hide the whole overlay once nothing is left open
+    const anyStillOpen = Array.from(allProgramWindows).some(w => w.classList.contains('active'));
+    if (!anyStillOpen) {
+        popupOverlay.classList.remove('active');
+    }
 }
 
 const closeBtn = document.querySelectorAll('.close-btn');
