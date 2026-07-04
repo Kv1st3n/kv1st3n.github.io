@@ -276,8 +276,11 @@ li > a:hover {
     height: 650px; 
     padding: 15px;
     box-sizing: border-box;
-    display: flex;
     flex-direction: column; 
+}
+
+.my-cable-shark-prog.active {
+    display: flex !important;
 }
 
 #prog-cable-shark.my-cable-shark-prog {
