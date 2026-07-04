@@ -383,7 +383,7 @@ li > a:hover {
 }
 
 .cable-shark-bottom-pane {
-    flex-grow: 1;
+    flex-grow: 0;
     background-color: #FFFFFF;
     border: 2px inset #ffffff;
     padding: 12px;

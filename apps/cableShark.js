@@ -104,3 +104,7 @@ export function closeCableShark() {
         clearInterval(captureIntervalId);
     }
 }
+
+function checkPacketStatus() {
+    console.log("Hello");
+}
