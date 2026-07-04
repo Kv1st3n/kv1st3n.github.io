@@ -16,8 +16,8 @@ const allProgramWindows = document.querySelectorAll('.program-window');
 function launchProgram(element) {
     allProgramWindows.forEach(win => {
         win.classList.remove('active');
-        win.style.top = '25%';
-        win.style.left = '35%';
+        win.style.top = '';
+        win.style.left = '';
     });
 
     popupOverlay.classList.add('active');
@@ -91,6 +91,7 @@ draggableElements.forEach((element) => {
     });
 
     element.addEventListener('dblclick', () => {
+        e.stopPropagation();
         launchProgram(element);
     });
 });
