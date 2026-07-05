@@ -48,6 +48,7 @@ function launchProgram(element) {
     }
 }
 
+
 /* Will make the opened window close by turning its visibility to none*/
 function closeProgram(e) {
     const windowEl = e.target.closest('.program-window');
