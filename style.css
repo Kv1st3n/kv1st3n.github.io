@@ -343,40 +343,12 @@ li > a:hover {
     outline: 1px dotted #000000;
 }
 
-#udp-traffic {
-    background-color:#55FFFF;
-    color:#000000;
-}
-
-#tcp-traffic {
-    background-color:#000080;
-    color:#FFFFFF;
-}
-
-#http-traffic {
-    background-color:#55FF55;
-    color:#000000;
-}
-
-#non-http-traffic {
-    background-color:#d582ff;
-    color:#000000;
-}
-
-#arp-traffic {
-    background-color:#FF9900;
-    color:#000000;
-}
-
-#serious-tcp-traffic {
-    background-color:#FF5555;
-    color:#000000;
-}
-
-#malformed-traffic {
-    background-color:#000000;
-    color:#ffffff;
-}
+.packet-type-udp        { background-color:#55FFFF; color:#000000; }
+.packet-type-tls        { background-color:#d582ff; color:#000000; }
+.packet-type-http       { background-color:#55FF55; color:#000000; }
+.packet-type-arp        { background-color:#FF9900; color:#000000; }
+.packet-type-tcp-warn   { background-color:#FFA500; color:#000000; }  /* changed to amber to match "suspicious" tier */
+.packet-type-malformed  { background-color:#000000; color:#ffffff; }
 
 .pane-divider {
     border: 0;
