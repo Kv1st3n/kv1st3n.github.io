@@ -243,3 +243,4 @@ function resetStatsPane(windowEl) {
 function checkPacketStatus() {
     console.log("Hello");
 }
+
