@@ -128,7 +128,7 @@ function randomInt(minValue, maxValue) {
 }
 
 function buildRandomIP() {
-    return `${randInt(1, 255)}.${randInt(0, 255)}.${randInt(0, 255)}.${randInt(1, 254)}`;
+    return `${randomInt(1, 255)}.${randomInt(0, 255)}.${randomInt(0, 255)}.${randomInt(1, 254)}`;
 }
 
 function buildPacket(packetType) {
@@ -144,8 +144,8 @@ function buildPacket(packetType) {
         protocol: packetType.protocol,
         srcIP: buildRandomIP(),
         dstIP: buildRandomIP(),
-        srcPort: hasPorts ? randInt(1024, 65535) : null,
-        dstPort: hasPorts ? (packetType.defaultPort ?? randInt(1, 65535)) : null,
+        srcPort: hasPorts ? randomInt(1024, 65535) : null,
+        dstPort: hasPorts ? (packetType.defaultPort ?? randomInt(1, 65535)) : null,
         size: randomInt(64, 1500),
         timestamp: new Date()
     };
