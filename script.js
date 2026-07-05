@@ -60,7 +60,7 @@ function closeProgram(e) {
     windowEl.style.left = '';
 
     if (windowEl.id === 'prog-cable-shark') {
-        closeWireShark();
+        closeCableShark();
     }
 
     // only hide the whole overlay once nothing is left open
