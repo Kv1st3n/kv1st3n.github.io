@@ -1,5 +1,4 @@
 let trackedNetworkActivities = [];
-const maxEvents = 30;
 let captureIntervalId = null;
 let packetCounter = 0;
 
@@ -7,6 +6,8 @@ let stats = {
     total: 0,
     byType: {}
 };
+
+const maxEvents = 30;
 
 const PACKET_TYPES = {
     HTTP: {
@@ -98,7 +99,6 @@ function networkEvents(windowEl) {
 }
 
 function pickPacketType() {
-    // Generates a clean integer between 1 and 100
     let minValue = 1;
     let maxValue = 100;
     const randomNetworkEvent = Math.random() * (maxValue - minValue + 1) + minValue;
