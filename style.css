@@ -347,7 +347,7 @@ li > a:hover {
 .packet-type-tls        { background-color:#d582ff; color:#000000; }
 .packet-type-http       { background-color:#55FF55; color:#000000; }
 .packet-type-arp        { background-color:#FF9900; color:#000000; }
-.packet-type-tcp-warn   { background-color:#FFA500; color:#000000; }  /* changed to amber to match "suspicious" tier */
+.packet-type-tcp-warn   { background-color:#ff5448; color:#000000; }
 .packet-type-malformed  { background-color:#000000; color:#ffffff; }
 
 .pane-divider {
