@@ -309,7 +309,6 @@ li > a:hover {
     outline: 2px solid #FF5555 !important;
 }
 
-
 .cable-shark-top-pane {
     display: flex;
     flex-direction: column;
@@ -349,6 +348,14 @@ li > a:hover {
 .packet-type-arp        { background-color:#FF9900; color:#000000; }
 .packet-type-tcp-warn   { background-color:#ff5448; color:#000000; }
 .packet-type-malformed  { background-color:#000000; color:#ffffff; }
+
+.hex-dump {
+    margin: 0;
+    color: #000000;
+    font-family: 'Perfect DOS VGA 437', monospace;
+    white-space: pre;
+    overflow-x: auto;
+}
 
 .pane-divider {
     border: 0;

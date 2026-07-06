@@ -238,7 +238,8 @@ function showPacketDetails(windowEl, packet) {
         <p class="network-stats">Destination: ${destLine}</p>
         <p class="network-stats">Size: ${packet.size} bytes</p>
         <p class="network-stats">Captured: ${packet.timestamp.toLocaleTimeString()}</p>
-        <p class="network-stats">Hex: ${packet.hex}</p>
+        <p class="network-stats">Hex:</p>
+        <pre class="hex-dump">${packet.hex}</pre>
         <hr class="pane-divider">
     `;
 }
@@ -278,12 +279,12 @@ function constructHex(hexArray) {
 }
 
 function buildHexLines(formattedHex) {
-    
+
     const lines = [];
 
-    for (let offset = 0; offset < formattedBytes.length; offset += BYTES_PER_LINE) {
+    for (let offset = 0; offset < formattedHex.length; offset += BYTES_PER_LINE) {
 
-        const lineBytes = formattedBytes.slice(offset, offset + BYTES_PER_LINE);
+        const lineBytes = formattedHex.slice(offset, offset + BYTES_PER_LINE);
         const offsetLabel = offset.toString(16).padStart(4, '0');
 
         const firstHalf = lineBytes.slice(0, HALF_LINE).join(' ');
