@@ -12,6 +12,8 @@ const maxEvents = 30;
 const hexValues = [
   'A', 'B', 'C', 'D', 'E', 'F', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
 ];
+const BYTES_PER_LINE = 16;
+const HALF_LINE = 8;
 
 const PACKET_TYPES = {
     HTTP: {
@@ -271,7 +273,30 @@ function constructHex(hexArray) {
         formattedHex.push(byte);
     }
 
-    return formattedHex.join(' ');
+    return buildHexLines(formattedHex);
+
+}
+
+function buildHexLines(formattedHex) {
+    
+    const lines = [];
+
+    for (let offset = 0; offset < formattedBytes.length; offset += BYTES_PER_LINE) {
+
+        const lineBytes = formattedBytes.slice(offset, offset + BYTES_PER_LINE);
+        const offsetLabel = offset.toString(16).padStart(4, '0');
+
+        const firstHalf = lineBytes.slice(0, HALF_LINE).join(' ');
+        const secondHalf = lineBytes.slice(HALF_LINE, BYTES_PER_LINE).join(' ');
+
+        const line = secondHalf
+            ? `${offsetLabel}   ${firstHalf}  ${secondHalf}`
+            : `${offsetLabel}   ${firstHalf}`;
+
+        lines.push(line);
+    }
+
+    return lines.join('\n');
 }
 
 export function closeCableShark() {
