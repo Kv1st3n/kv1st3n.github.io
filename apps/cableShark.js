@@ -247,57 +247,45 @@ function showPacketDetails(windowEl, packet) {
 function buildRandomHex() {
 
     let hexSize = randomInt(20, 40);
-    const hexArray = [];
+    const byteArray = [];
 
     for (let i = 0; i < hexSize; i++) {
-
-        let value1 = Math.floor(Math.random() * 16);
-        let value2 = Math.floor(Math.random() * 16);
-
-        let hexValue1 = hexValues[value1];
-        let hexValue2 = hexValues[value2];
-
-        hexArray.push(hexValue1);
-        hexArray.push(hexValue2);
+        byteArray.push(Math.floor(Math.random() * 256));
     }
 
-    let fixedHex = constructHex(hexArray);
-    return fixedHex;
+    return constructHex(byteArray);
 }
 
-function constructHex(hexArray) {
-
-    const formattedHex = [];
-
-    for (let i = 0; i < hexArray.length; i += 2) {
-        let byte = hexArray[i] + hexArray[i + 1];
-        formattedHex.push(byte);
-    }
-
-    return buildHexLines(formattedHex);
-
-}
-
-function buildHexLines(formattedHex) {
+function constructHex(byteValues) {
 
     const lines = [];
 
-    for (let offset = 0; offset < formattedHex.length; offset += BYTES_PER_LINE) {
-
-        const lineBytes = formattedHex.slice(offset, offset + BYTES_PER_LINE);
-        const offsetLabel = offset.toString(16).padStart(4, '0');
-
-        const firstHalf = lineBytes.slice(0, HALF_LINE).join(' ');
-        const secondHalf = lineBytes.slice(HALF_LINE, BYTES_PER_LINE).join(' ');
-
-        const line = secondHalf
-            ? `${offsetLabel}   ${firstHalf}  ${secondHalf}`
-            : `${offsetLabel}   ${firstHalf}`;
-
-        lines.push(line);
+    for (let offset = 0; offset < byteValues.length; offset += BYTES_PER_LINE) {
+        const lineBytes = byteValues.slice(offset, offset + BYTES_PER_LINE);
+        lines.push(buildHexLines(lineBytes, offset));
     }
 
     return lines.join('\n');
+
+}
+
+function buildHexLines(lineBytes, offset) {
+    const offsetLabel = offset.toString(16).padStart(4, '0');
+
+    const hexPairs = lineBytes.map(b => b.toString(16).padStart(2, '0'));
+
+    while (hexPairs.length <= BYTES_PER_LINE) {
+        hexPairs.push('  ');
+    }
+
+    const firstHalf = hexPairs.slice(0, HALF_LINE).join(' ');
+    const secondHalf = hexPairs.slice(HALF_LINE, BYTES_PER_LINE).join(' ');
+
+    const asciiPart = lineBytes
+        .map(b => (b >= 32 && b <= 126) ? String.fromCharCode(b) : '.')
+        .join('');
+
+    return `${offsetLabel}   ${firstHalf}  ${secondHalf}   ${asciiPart}`;
 }
 
 export function closeCableShark() {
