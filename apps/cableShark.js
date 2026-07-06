@@ -258,11 +258,17 @@ function buildRandomHex() {
         hexArray.push(hexValue2);
     }
 
+    constructHex(hexArray);
     return hexArray;
 }
 
-function constructHex(hex1, hex2) {
+function constructHex(hexArray) {
 
+    for (let i = 0; i < hexArray.length; i += 2) {
+        hexArray.push('.');
+    }
+
+    return hexArray;
 }
 
 export function closeCableShark() {
