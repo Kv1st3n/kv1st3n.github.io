@@ -278,8 +278,8 @@ function buildHexLines(lineBytes, offset) {
         hexPairs.push('  ');
     }
 
-    const firstHalf = hexPairs.slice(0, HALF_LINE).join(' ');
-    const secondHalf = hexPairs.slice(HALF_LINE, BYTES_PER_LINE).join(' ');
+    const firstHalf = hexPairs.slice(0, HALF_LINE).join(' ').toUpperCase();
+    const secondHalf = hexPairs.slice(HALF_LINE, BYTES_PER_LINE).join(' ').toUpperCase();
 
     const asciiPart = lineBytes
         .map(b => (b >= 32 && b <= 126) ? String.fromCharCode(b) : '.')
