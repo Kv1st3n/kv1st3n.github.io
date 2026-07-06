@@ -241,20 +241,21 @@ function showPacketDetails(windowEl, packet) {
     `;
 }
 
-// add random hex function which can be then added for the statspane
-
 function buildRandomHex() {
 
     let hexSize = randomInt(20, 40);
-    const hexArray = new Array(hexSize);
+    const hexArray = [];
 
-    for (let i = 0; i <= hexSize.length(); i++) {
-        let value1 = Math.floor(Math.random() * 16) + 1;
-        let value2 = Math.floor(Math.random() * 16) + 1;
+    for (let i = 0; i < hexSize; i++) {
+
+        let value1 = Math.floor(Math.random() * 16);
+        let value2 = Math.floor(Math.random() * 16);
+
         let hexValue1 = hexValues[value1];
         let hexValue2 = hexValues[value2];
+
         hexArray.push(hexValue1);
-        hexValue2.push(hexValue2);
+        hexArray.push(hexValue2);
     }
 
     return hexArray;
