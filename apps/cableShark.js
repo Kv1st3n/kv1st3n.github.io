@@ -258,8 +258,8 @@ function buildRandomHex() {
         hexArray.push(hexValue2);
     }
 
-    constructHex(hexArray);
-    return hexArray;
+    fixedHex = constructHex(hexArray);
+    return fixedHex;
 }
 
 function constructHex(hexArray) {
