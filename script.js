@@ -124,7 +124,14 @@ draggablePrograms.forEach((program) => {
     let programOffsetY = 0;
 
     program.addEventListener('pointerdown', (e) => {
-        if (e.target.closest('.close-btn')) return;
+        
+        if (e.target.closest('.close-btn')) {
+            return;
+        }
+
+        if (e.target.closest('.network-activity')) {
+            return;
+        }
 
         program.setPointerCapture(e.pointerId);
         
