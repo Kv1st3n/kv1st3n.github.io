@@ -258,7 +258,7 @@ function buildRandomHex() {
         hexArray.push(hexValue2);
     }
 
-    fixedHex = constructHex(hexArray);
+    fixedHex == constructHex(hexArray);
     return fixedHex;
 }
 
