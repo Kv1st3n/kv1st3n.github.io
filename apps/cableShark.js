@@ -264,11 +264,14 @@ function buildRandomHex() {
 
 function constructHex(hexArray) {
 
+    const formattedHex = [];
+
     for (let i = 0; i < hexArray.length; i += 2) {
-        hexArray.push('.');
+        let byte = hexArray[i] + hexArray[i + 1];
+        formattedHex.push(byte);
     }
 
-    return hexArray;
+    return formattedHex.join(' ');
 }
 
 export function closeCableShark() {
