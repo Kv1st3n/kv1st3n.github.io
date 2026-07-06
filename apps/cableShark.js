@@ -90,12 +90,20 @@ function liveCapture(windowEl) {
     }, 1500);
 }
 
+function updateTotalCount(windowEl) {
+    const totalEl = windowEl.querySelector('.packet-total-count');
+    if (totalEl) {
+        totalEl.textContent = `Total packets seen: ${stats.total}`;
+    }
+}
+
 function networkEvents(windowEl) {
     const selectedPacket = pickPacketType();
     const packet = buildPacket(selectedPacket);
 
     updateTrackedNetwork(packet);
     updateCablesharkEvents(windowEl);
+    updateTotalCount(windowEl);
 }
 
 function pickPacketType() {
@@ -216,6 +224,7 @@ function showPacketDetails(windowEl, packet) {
         : packet.dstIP;
 
     statsPane.innerHTML = `
+        <p class="network-stats packet-total-count">Total packets seen: ${stats.total}</p>
         <p class="network-stats"><strong>Packet Detail</strong></p>
         <p class="network-stats">Protocol: ${packet.protocol}</p>
         <p class="network-stats">Source: ${sourceLine}</p>
@@ -223,7 +232,6 @@ function showPacketDetails(windowEl, packet) {
         <p class="network-stats">Size: ${packet.size} bytes</p>
         <p class="network-stats">Captured: ${packet.timestamp.toLocaleTimeString()}</p>
         <hr class="pane-divider">
-        <p class="network-stats">Total packets seen: ${stats.total}</p>
     `;
 }
 
@@ -236,7 +244,10 @@ export function closeCableShark() {
 function resetStatsPane(windowEl) {
     const statsPane = windowEl.querySelector('.cable-shark-bottom-pane');
     if (statsPane) {
-        statsPane.innerHTML = `<p class="network-stats">Click a packet to inspect it.</p>`;
+        statsPane.innerHTML = `
+            <p class="network-stats packet-total-count">Total packets seen: 0</p>
+            <p class="network-stats">Click a packet to inspect it.</p>
+        `;
     }
 }
 
