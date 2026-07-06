@@ -9,6 +9,10 @@ let stats = {
 
 const maxEvents = 30;
 
+const hexValues = [
+  'A', 'B', 'C', 'D', 'E', 'F', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+];
+
 const PACKET_TYPES = {
     HTTP: {
         label: "Unencrypted HTTP GET Request",
@@ -155,7 +159,8 @@ function buildPacket(packetType) {
         srcPort: hasPorts ? randomInt(1024, 65535) : null,
         dstPort: hasPorts ? (packetType.defaultPort ?? randomInt(1, 65535)) : null,
         size: randomInt(64, 1500),
-        timestamp: new Date()
+        timestamp: new Date(),
+        hex: buildRandomHex()
     };
 }
 
@@ -231,8 +236,32 @@ function showPacketDetails(windowEl, packet) {
         <p class="network-stats">Destination: ${destLine}</p>
         <p class="network-stats">Size: ${packet.size} bytes</p>
         <p class="network-stats">Captured: ${packet.timestamp.toLocaleTimeString()}</p>
+        <p class="network-stats">Hex: ${packet.hex}</p>
         <hr class="pane-divider">
     `;
+}
+
+// add random hex function which can be then added for the statspane
+
+function buildRandomHex() {
+
+    let hexSize = randomInt(20, 40);
+    const hexArray = new Array(hexSize);
+
+    for (let i = 0; i <= hexSize.length(); i++) {
+        let value1 = Math.floor(Math.random() * 16) + 1;
+        let value2 = Math.floor(Math.random() * 16) + 1;
+        let hexValue1 = hexValues[value1];
+        let hexValue2 = hexValues[value2];
+        hexArray.push(hexValue1);
+        hexValue2.push(hexValue2);
+    }
+
+    return hexArray;
+}
+
+function constructHex(hex1, hex2) {
+
 }
 
 export function closeCableShark() {
@@ -251,6 +280,4 @@ function resetStatsPane(windowEl) {
     }
 }
 
-function checkPacketStatus() {
-    console.log("Hello");
-}
+
