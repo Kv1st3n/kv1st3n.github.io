@@ -31,6 +31,9 @@ function launchProgram(element) {
     else if (element.classList.contains('my-projects-folder')) {
         targetWin = document.getElementById('prog-project-folder');
     }
+    else if (element.classList.contains('my-about-me')) {
+        targetWin = document.getElementById('prog-about-me');
+    }
     else if (element.classList.contains('my-cable-shark')) {
         targetWin = document.getElementById('prog-cable-shark');
         initCableShark();
