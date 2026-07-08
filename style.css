@@ -313,11 +313,18 @@ li > a:hover {
 
 .about-me-section {
     background-color: #000000;
-    border: 4px double #C0C0C0; 
+    border: 4px double #C0C0C0;
+    padding: 15px;
+    color: #C0C0C0; 
 }
 
 .about-me-text-section {
     color: #FFFFFF;
+}
+
+.about-me-section h3 {
+    color: #FFFFFF;
+    margin-bottom: 5px;
 }
 
 .about-me-right-pane {
