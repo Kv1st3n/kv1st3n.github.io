@@ -24,8 +24,8 @@ body {
     z-index: 10;   
 }
 
-.my-trashbin, .my-computer, .my-empty-folder, .my-projects-folder, .my-cable-shark, 
-.my-data-science, .my-finance, .program-shortcut {
+.my-trashbin, .my-computer, .my-empty-folder, .my-projects-folder, .my-about-me, 
+.my-cable-shark, .my-data-science, .my-finance, .program-shortcut {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,12 +36,12 @@ body {
 }
 
 .my-trashbin:active, .my-computer:active, .my-empty-folder:active, .my-projects-folder:active, 
-.my-cable-shark:active, .my-data-science:active, .my-finance:active, .program-shortcut:active {
+.my-about-me:active, .my-cable-shark:active, .my-data-science:active, .my-finance:active, .program-shortcut:active {
     cursor: grabbing;
 }
 
 .my-trashbin img, .my-computer img, .my-empty-folder img, .my-projects-folder img, 
-.my-cable-shark img, .my-data-science img, .my-finance img, .program-shortcut img {
+.my-about-me img, .my-cable-shark img, .my-data-science img, .my-finance img, .program-shortcut img {
     width: 32px;
     height: 32px;
     display: block;
@@ -52,6 +52,7 @@ body {
 .my-computer:hover .icon-text, 
 .my-empty-folder:hover .icon-text, 
 .my-projects-folder:hover .icon-text,
+.my-about-me:hover .icon-text,
 .my-cable-shark:hover .icon-text,
 .my-data-science:hover .icon-text,
 .my-finance:hover .icon-text,
