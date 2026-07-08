@@ -375,6 +375,10 @@ li > a:hover {
     color: #FFFF00;
     text-decoration: none;
     font-size: 0.85rem;
+
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .project-card a:hover {

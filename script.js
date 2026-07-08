@@ -128,8 +128,11 @@ draggablePrograms.forEach((program) => {
 
     program.addEventListener('pointerdown', (e) => {
         
-        if (e.target.closest('.close-btn') || e.target.closest('.network-activity') || 
-            e.target.closest('a') || e.target.closest('button') || e.target.closest('select')) {
+        if (!e.target.closest('.program-header') && !e.target.matches('h2')) {
+            return; 
+        }
+        
+        if (e.target.closest('.close-btn') || e.target.closest('a') || e.target.closest('button')) {
             return;
         }
 
