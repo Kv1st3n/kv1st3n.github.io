@@ -271,12 +271,9 @@ li > a:hover {
 .my-about-me-prog {
     background-color: #C0C0C0;
     border: 4px double #868686;
-    width: 1100px;
-    max-width: 95vw;
-    height: 650px; 
+    width: 550px; 
     padding: 15px;
     box-sizing: border-box;
-    flex-direction: column; 
 }
 
 .my-about-me-prog h2 {
@@ -298,6 +295,28 @@ li > a:hover {
     color: #FFFFFF !important;
     background-color: #AA0000 !important;
     outline: 2px solid #FF5555 !important;
+}
+
+.about-me-left-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.pane-divider {
+    border: 0;
+    height: 2px;
+    background-color: #808080;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.about-me-right-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left; 
 }
 
 /* Cable shark */
