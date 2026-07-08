@@ -279,10 +279,6 @@ li > a:hover {
     flex-direction: column; 
 }
 
-.my-about-me-prog.active {
-    display: flex !important;
-}
-
 .my-about-me-prog h2 {
     color:#000000;
 }
