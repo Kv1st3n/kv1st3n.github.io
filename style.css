@@ -297,19 +297,18 @@ li > a:hover {
     outline: 2px solid #FF5555 !important;
 }
 
+.about-me-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: start;
+}
+
 .about-me-left-pane {
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: left;
-}
-
-.pane-divider {
-    border: 0;
-    height: 2px;
-    background-color: #808080;
-    margin: 15px 0;
-    width: 100%;
 }
 
 .about-me-right-pane {
