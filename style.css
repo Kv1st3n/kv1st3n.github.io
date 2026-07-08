@@ -311,6 +311,15 @@ li > a:hover {
     text-align: left;
 }
 
+.about-me-section {
+    background-color: #000000;
+    border: 4px double #C0C0C0; 
+}
+
+.about-me-text-section {
+    color: #000000;
+}
+
 .about-me-right-pane {
     display: flex;
     flex-direction: column;
