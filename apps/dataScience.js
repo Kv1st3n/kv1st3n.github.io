@@ -115,7 +115,7 @@ function simpleLinearRegression(points) {
     let ssTot = 0;
 
     // Residual sum of squares
-    let ssTes = 0;
+    let ssRes = 0;
 
     for (let i = 0; i < N; i++) {
         const p = points[i];
