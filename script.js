@@ -40,7 +40,6 @@ function launchProgram(element) {
     }
     else if (element.classList.contains('my-data-science')) {
         targetWin = document.getElementById('prog-data-science');
-        initDataScience();
     }
     else if (element.classList.contains('my-finance')) {
         targetWin = document.getElementById('prog-finance-app');
