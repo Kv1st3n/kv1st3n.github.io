@@ -20,6 +20,12 @@ export function initDataScience() {
     updateOutput(displayOutput);
 
     analyzeBtn.addEventListener('click', () => {
+
+        if (!userInput.value.trim()) {
+            alert("Please type a coordinate first!"); 
+            return;
+        }
+        
         const point = parsePoint(userInput.value);
 
         if (!point) {
