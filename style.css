@@ -431,7 +431,6 @@ li > a:hover {
     flex-direction: column; 
 }
 
-
 .my-cable-shark-prog.active {
     display: flex !important;
 }
@@ -534,6 +533,27 @@ li > a:hover {
 }
 
 /* Data Science */
+
+.my-data-science-prog {
+    background-color: #C0C0C0;
+    border: 4px double #868686;
+    width: 550px; 
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.my-data-science-prog .close-btn {
+    color: #FF5555;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+.my-data-science-prog .close-btn:hover {
+    color: #FFFFFF;
+    background-color: #AA0000;
+    outline: 2px solid #FF5555;
+}
 
 .my-data-science-prog h2 {
     margin-top: 0;
