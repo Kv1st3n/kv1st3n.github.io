@@ -1,11 +1,11 @@
 //import { initTrashBin } from './apps/trashbin.js';
 import { initCableShark, closeCableShark } from './apps/cableShark.js';
 import { initFinance } from './apps/finance.js';
-//import { initDataScience} from './apps/dataScience.js';
+import { initDataScience } from './apps/dataScience.js';
 
 //initTrashBin();
 initFinance();
-//initDataScience();
+initDataScience();
 
 const draggableElements = document.querySelectorAll(".draggable-window");
 const popupOverlay = document.getElementById('desktop-programs-overlay');
@@ -40,6 +40,7 @@ function launchProgram(element) {
     }
     else if (element.classList.contains('my-data-science')) {
         targetWin = document.getElementById('prog-data-science');
+        initDataScience();
     }
     else if (element.classList.contains('my-finance')) {
         targetWin = document.getElementById('prog-finance-app');

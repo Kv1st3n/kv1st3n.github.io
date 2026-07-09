@@ -538,7 +538,7 @@ li > a:hover {
     background-color: #C0C0C0;
     border: 4px double #868686;
     width: 850px; 
-    height: 850px;
+    height: 650px;
     padding: 15px;
     box-sizing: border-box;
 }
@@ -566,17 +566,56 @@ li > a:hover {
     color: #000000;
 }
 
-.regression-btn {
-    color:#FFFF00;
-    font-weight: bold;
-    background: transparent;
-    border: none;
+.algorithm {
+    background-color: #000000;
+    border: 2px inset #FFFFFF;
+    padding: 12px;
+    margin: 10px 0;
+    text-align: left;
 }
 
-.regression-btn:hover {
-    color:#FF9900;
-    background-color:#000000;
-    outline: 2px solid;
+.algorithm label {
+    color: #C0C0C0;
+    display: block;
+    margin-bottom: 4px;
+}
+
+#userInput {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #000000;
+    font-family: 'Perfect DOS VGA 437', monospace;
+    padding: 4px;
+    width: 140px;
+    margin-bottom: 10px;
+}
+
+#analysisOutput {
+    background-color: #000000;
+    border: 1px dotted #A8A8A8;
+    padding: 8px;
+    min-height: 110px;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    white-space: normal;
+    overflow-y: auto;
+}
+
+.regression-btn {
+    font-family: 'Perfect DOS VGA 437', monospace;
+    background-color: #C0C0C0;
+    color: #000000;
+    border: 2px solid;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 4px;
+    margin-top: 5px;
+}
+
+.regression-btn:active {
+    border-color: #808080 #FFFFFF #FFFFFF #808080;
 }
 
 /* Finance App */
