@@ -64,14 +64,14 @@ function parsePoint(inputStr) {
     return { x, y };
 }
 
-function generateRandomPoints(count) {
+function generateRandomPoints(count, noiseScale = 1, minSlope = 0.5, slopeRange = 2) {
     const points = [];
-    const trueSlope = (Math.random() * 2) + 0.5;
+    const trueSlope = (Math.random() * slopeRange) + minSlope;
     const trueIntercept = (Math.random() * 5);
-
+ 
     for (let i = 0; i < count; i++) {
         const x = i + 1;
-        const noise = (Math.random() - 0.5) * 2;
+        const noise = (Math.random() - 0.5) * 2 * noiseScale;
         const y = parseFloat((trueSlope * x + trueIntercept + noise).toFixed(2));
         points.push({ x, y: parseFloat(y.toFixed(2)) });
     }
