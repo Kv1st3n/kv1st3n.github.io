@@ -557,12 +557,16 @@ li > a:hover {
 
 .my-data-science-prog h2 {
     margin-top: 0;
-    color: #FFFFFF;
+    color: #000000;
 }
 
 .my-data-science-prog p {
     margin-top: 5px;
-    color: #FFFFFF;
+    color: #000000;
+}
+
+#regression {
+    color:#55FF55;
 }
 
 /* Finance App */
