@@ -565,8 +565,17 @@ li > a:hover {
     color: #000000;
 }
 
-#regression {
-    color:#55FF55;
+.regression-btn {
+    color:#FFFF00;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+.regression-btn:hover {
+    color:#FF9900;
+    background-color:#000000;
+    outline: 2px solid;
 }
 
 /* Finance App */
