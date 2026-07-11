@@ -541,6 +541,8 @@ li > a:hover {
     height: 650px;
     padding: 15px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .my-data-science-prog .close-btn {
@@ -556,22 +558,24 @@ li > a:hover {
     outline: 2px solid #FF5555;
 }
 
-.data-science-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 100%;
-    box-sizing: border-box;
-}
-
 .my-data-science-prog h2 {
     margin-top: 0;
+    margin-bottom: 10px;
     color: #000000;
 }
 
 .my-data-science-prog p {
     margin-top: 5px;
     color: #C0C0C0; 
+}
+
+.data-science-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+    box-sizing: border-box;
 }
 
 .data-science-top-pane {
@@ -602,7 +606,8 @@ li > a:hover {
     margin-bottom: 4px;
 }
 
-#userInput {
+#userInput,
+#kmeansInput {
     background-color: #FFFFFF;
     color: #000000;
     border: 1px solid #000000;
@@ -612,15 +617,20 @@ li > a:hover {
     margin-bottom: 10px;
 }
 
-#analysisOutput {
+#analysisOutput,
+#kmeansAnalysis {
     background-color: #000000;
     border: 1px dotted #A8A8A8;
     padding: 8px;
-    min-height: 110px;
+    min-height: 60px;
     font-size: 0.9rem;
     color: #FFFFFF;
     white-space: normal;
     overflow-y: auto;
+}
+
+#analysisOutput {
+    min-height: 110px;
 }
 
 .regression-btn {
@@ -640,14 +650,34 @@ li > a:hover {
     border-color: #808080 #FFFFFF #FFFFFF #808080;
 }
 
+.data-science-bottom-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #FFFFFF;
+    border: 2px inset #ffffff;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .data-science-bottom-pane p {
-    color: #C0C0C0;
-    margin: 0 0 8px 0;
+    color: #000000;
+    margin: 0;
+}
+
+.data-science-bottom-pane label {
+    color: #000000;
+    display: block;
+    margin-bottom: 4px;
 }
 
 .kmeans-btn {
-   font-family: 'Perfect DOS VGA 437', monospace; 
-   background-color: #C0C0C0;
+    font-family: 'Perfect DOS VGA 437', monospace; 
+    background-color: #C0C0C0;
     color: #000000;
     border: 2px solid;
     border-color: #FFFFFF #808080 #808080 #FFFFFF;
@@ -655,14 +685,18 @@ li > a:hover {
     cursor: pointer;
     font-weight: bold;
     margin-right: 4px;
-    margin-top: 5px;
+}
+
+.kmeans-btn:active {
+    border-color: #808080 #FFFFFF #FFFFFF #808080;
 }
 
 #kMeansChart {
     background-color: #000000;
     border: 2px inset #FFFFFF;
     width: 100%;
-    height: 180px;
+    flex: 1;
+    min-height: 150px;
     display: block;
     box-sizing: border-box;
 }
