@@ -618,8 +618,7 @@ li > a:hover {
     margin-bottom: 10px;
 }
 
-#analysisOutput,
-#kmeansAnalysis {
+#analysisOutput {
     background-color: #000000;
     border: 1px dotted #A8A8A8;
     padding: 8px;
