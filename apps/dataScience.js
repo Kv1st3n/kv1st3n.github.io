@@ -79,7 +79,7 @@ export function initDataScience() {
             return;
         }
 
-        kmeansPoints = generateRandomPoints(count);
+        kmeansPoints = generateRandomPointsForKmeans(count);
         kmeansInput.value = '';
     });
 
@@ -199,7 +199,7 @@ function kMeans(points) {
 
 }
 
-function generateRandomPoints(count) {
+function generateRandomPointsForKmeans(count) {
     const canvas = document.getElementById('kMeansChart');
     const points = [];
 
