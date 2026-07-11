@@ -645,6 +645,19 @@ li > a:hover {
     margin: 0 0 8px 0;
 }
 
+.kmeans-btn {
+   font-family: 'Perfect DOS VGA 437', monospace; 
+   background-color: #C0C0C0;
+    color: #000000;
+    border: 2px solid;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 4px;
+    margin-top: 5px;
+}
+
 #kMeansChart {
     background-color: #000000;
     border: 2px inset #FFFFFF;

@@ -25,7 +25,7 @@ export function initDataScience() {
             alert("Please type a coordinate first!"); 
             return;
         }
-        
+
         const point = parsePoint(userInput.value);
 
         if (!point) {
@@ -162,7 +162,7 @@ function updateOutput(displayElement) {
 
 // user puts in x-amount of points (an integer) and how many clusters, also ask for how many runs / iterations
 // then proceed to do kMeans
-function kMeans() {
+function kMeans(points) {
 
 }
 
