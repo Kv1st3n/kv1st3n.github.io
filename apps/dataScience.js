@@ -19,6 +19,7 @@ export function initDataScience() {
 
     // kmeans
     const kmeansInput = windowEl.querySelector('#kmeansInput');
+    const clustersInput = windowEl.querySelector('#clustersInput');
     const addPoints = windowEl.querySelector('#addPoints');
     const runBtn = windowEl.querySelector("#runKMeans");
     const clearPoints = windowEl.querySelector('#clearPoints');
@@ -66,16 +67,28 @@ export function initDataScience() {
     // kmeans
     addPoints.addEventListener('click', () => {
         const rawValue = kmeansInput.value.trim();
+        const rawClusters = clustersInput.value.trim();
 
         if (!rawValue) {
             alert("Please enter amount of points (whole numbers).");
             return;
         }
 
+        if (!rawClusters) {
+            alert("Please enter an amount of clusters (whole numbers).");
+            return;
+        }
+
         const count = parseInt(rawValue, 10);
+        const clusterCount = parseInt(rawClusters, 10);
 
         if (isNaN(count) || count <= 0) {
-            alert("Please enter a whole number greater than 0.");
+            alert("Please enter a whole number greater than 0 for points.");
+            return;
+        }
+
+        if (isNaN(clusterCount) || clusterCount <= 0) {
+            alert("Please enter a whole number greater than 0 for clusters.");
             return;
         }
 
@@ -85,6 +98,10 @@ export function initDataScience() {
 
     runBtn.addEventListener('click', () => {
         drawPoints(kmeansPoints);
+    });
+
+    clearBtn.addEventListener('click', () => {
+        kmeansPoint = [];
     });
 }
 
