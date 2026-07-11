@@ -94,6 +94,7 @@ export function initDataScience() {
 
         kmeansPoints = generateRandomPointsForKmeans(count);
         kmeansInput.value = '';
+        clustersInput.value = '';
     });
 
     runBtn.addEventListener('click', () => {
