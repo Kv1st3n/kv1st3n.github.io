@@ -166,20 +166,30 @@
             <div id="prog-data-science" class="program-window my-data-science-prog draggable-program">
                 <button id="closeMyDataScience" class="close-btn">[X]</button>
                 <h2>Data Analysis</h2>
-                <p>No Data Analysis</p>
-                <div class="algorithm" id="simple-regression">
-                    <p id="regression">Regression</p>
 
-                    <label for="userInput">Enter value:</label>
-                    <input type="text" id="userInput" placeholder="Enter here...">
-                    <p id="analysisOutput"></p>
+                <div class="data-science-grid">
 
-                    <button id="analyzeData" class="regression-btn">Analyze</button>
-                    <button id="clearDataPoint" class="regression-btn">Clear</button>
-                    <button id="randomizeDataPoint" class="regression-btn">Randomize</button>
-                    <button id="undoDataPoint" class="regression-btn">Undo</button>
+                    <div class="data-science-top-pane">
+                        <div class="algorithm" id="simple-regression">
+                            <p id="regression">Regression</p>
+
+                            <label for="userInput">Enter value:</label>
+                            <input type="text" id="userInput" placeholder="Enter here...">
+                            <p id="analysisOutput"></p>
+
+                            <button id="analyzeData" class="regression-btn">Analyze</button>
+                            <button id="clearDataPoint" class="regression-btn">Clear</button>
+                            <button id="randomizeDataPoint" class="regression-btn">Randomize</button>
+                            <button id="undoDataPoint" class="regression-btn">Undo</button>
+                        </div>
+                    </div>
+
+                    <div class="data-science-bottom-pane">
+                        <p>K-Means</p>
+                        <canvas id="kMeansChart" width="50" height="50"></canvas>
+                    </div>
+
                 </div>
-                <p>K-Means</p>
                 <div class="program-resizer"></div>
             </div>
 
