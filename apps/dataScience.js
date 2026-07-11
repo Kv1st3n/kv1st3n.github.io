@@ -103,6 +103,7 @@ export function initDataScience() {
 
     clearBtn.addEventListener('click', () => {
         kmeansPoint = [];
+        clearCanvas();
     });
 }
 
@@ -243,6 +244,18 @@ function drawPoints(points) {
         ctx.fillStyle = '#55FFFF';
         ctx.fill();
     });
+}
+
+function clearCanvas() {
+
+    const canvas = document.getElementById('kMeansChart');
+    const ctx = canvas.getContext('2d');
+
+    canvas.addEventListener('click', function(event) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    })
+
+
 }
 
 
