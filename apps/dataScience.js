@@ -23,6 +23,8 @@ export function initDataScience() {
     const addPoints = windowEl.querySelector('#addPoints');
     const runBtn = windowEl.querySelector("#runKMeans");
     const clearPoints = windowEl.querySelector('#clearPoints');
+    const canvas = document.getElementById('kMeansChart');
+    const ctx = canvas.getContext('2d');
 
     let kmeansPoints = [];
     // regression
@@ -101,7 +103,7 @@ export function initDataScience() {
         drawPoints(kmeansPoints);
     });
 
-    clearBtn.addEventListener('click', () => {
+    clearPoints.addEventListener('click', () => {
         kmeansPoint = [];
         clearCanvas();
     });
@@ -233,9 +235,6 @@ function generateRandomPointsForKmeans(count) {
 }
 
 function drawPoints(points) {
-    const canvas = document.getElementById('kMeansChart');
-    const ctx = canvas.getContext('2d');
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     points.forEach(point => {
@@ -247,15 +246,7 @@ function drawPoints(points) {
 }
 
 function clearCanvas() {
-
-    const canvas = document.getElementById('kMeansChart');
-    const ctx = canvas.getContext('2d');
-
-    canvas.addEventListener('click', function(event) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); 
-    })
-
-
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
 }
 
 
