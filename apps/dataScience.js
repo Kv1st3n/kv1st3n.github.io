@@ -102,8 +102,11 @@ export function initDataScience() {
     });
 
     clearPoints.addEventListener('click', () => {
+        const canvas = document.getElementById('kMeansChart');
+        const ctx = canvas.getContext('2d');
         kmeansPoint = [];
-        clearCanvas();
+        clearCanvas(canvas, ctx);
+
     });
 }
 
@@ -246,10 +249,7 @@ function drawPoints(points) {
     });
 }
 
-function clearCanvas() {
-
-    const canvas = document.getElementById('kMeansChart');
-    const ctx = canvas.getContext('2d');
+function clearCanvas(canvas, ctx) {
 
     canvas.addEventListener('click', function(event) {
         ctx.clearRect(0, 0, canvas.width, canvas.height); 
