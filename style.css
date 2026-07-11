@@ -607,7 +607,8 @@ li > a:hover {
 }
 
 #userInput,
-#kmeansInput {
+#kmeansInput,
+#kmeansClusters {
     background-color: #FFFFFF;
     color: #000000;
     border: 1px solid #000000;
