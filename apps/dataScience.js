@@ -9,12 +9,22 @@ export function initDataScience() {
 
     console.log("Data Science Tool Initialized...");
 
+    // regression
     const userInput = windowEl.querySelector('#userInput');
     const analyzeBtn = windowEl.querySelector('#analyzeData');
     const clearBtn = windowEl.querySelector('#clearDataPoint');
     const randomizeBtn = windowEl.querySelector('#randomizeDataPoint');
     const undoBtn = windowEl.querySelector('#undoDataPoint');
     const displayOutput = windowEl.querySelector('#analysisOutput');
+
+    // kmeans
+    const kmeansInput = windowEl.querySelector('#kmeansInput');
+    const addPoints = windowEl.querySelector('#addPoints');
+    const runBtn = windowEl.querySelector("#runKMeans");
+    const clearPoints = windowEl.querySelector('#clearPoints');
+
+    let kmeansPoints = [];
+    // regression
 
     dataPoints = [];
     updateOutput(displayOutput);
@@ -53,6 +63,29 @@ export function initDataScience() {
         updateOutput(displayOutput);
     });
 
+    // kmeans
+    addPoints.addEventListener('click', () => {
+        const rawValue = kmeansInput.value.trim();
+
+        if (!rawValue) {
+            alert("Please enter amount of points (whole numbers).");
+            return;
+        }
+
+        const count = parseInt(rawValue, 10);
+
+        if (isNaN(count) || count <= 0) {
+            alert("Please enter a whole number greater than 0.");
+            return;
+        }
+
+        kmeansPoints = generateRandomPoints(count);
+        kmeansInput.value = '';
+    });
+
+    runBtn.addEventListener('click', () => {
+        drawPoints(kmeansPoints);
+    });
 }
 
 function parsePoint(inputStr) {
@@ -164,6 +197,34 @@ function updateOutput(displayElement) {
 // then proceed to do kMeans
 function kMeans(points) {
 
+}
+
+function generateRandomPoints(count) {
+    const canvas = document.getElementById('kMeansChart');
+    const points = [];
+
+    for (let i = 0; i < count; i++) {
+        points.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height
+        });
+    }
+
+    return points;
+}
+
+function drawPoints(points) {
+    const canvas = document.getElementById('kMeansChart');
+    const ctx = canvas.getContext('2d');
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    points.forEach(point => {
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
+        ctx.fillStyle = '#55FFFF';
+        ctx.fill();
+    });
 }
 
 
