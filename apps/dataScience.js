@@ -98,7 +98,7 @@ export function initDataScience() {
     });
 
     runBtn.addEventListener('click', () => {
-        drawPoints(kmeansPoints);
+        drawPoints(kmeansPoints, clusterCount);
     });
 
     clearPoints.addEventListener('click', () => {
@@ -232,17 +232,28 @@ function generateRandomPointsForKmeans(count) {
     return points;
 }
 
-function drawPoints(points) {
+function drawPoints(points, clusterCount) {
     const canvas = document.getElementById('kMeansChart');
     const ctx = canvas.getContext('2d');
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    points.forEach(point => {
-        ctx.beginPath();
-        ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
-        ctx.fillStyle = '#55FFFF';
-        ctx.fill();
+    // split the points into different groups
+    const groupSplit = Object.groupBy(points, (point, index) => {
+        return index % clusterCount;
+    })
+
+    Object.keys(groupSplit).forEach((groupIndex) => {
+        const currentGroupPoints = groupSplit[groupIndex];
+
+        const hue = (groupIndex * (360 / clusterCount));
+        ctx.fillStyle = `hsl(${hue}, 85%, 55%)`;
+
+        currentGroupPoints.forEach(point => {
+            ctx.beginPath();
+            ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
+            ctx.fill();
+        });
     });
 }
 
