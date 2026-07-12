@@ -25,6 +25,7 @@ export function initDataScience() {
     const clearPoints = windowEl.querySelector('#clearPoints');
 
     let kmeansPoints = [];
+    let clusterCount;
     // regression
 
     dataPoints = [];
@@ -80,7 +81,7 @@ export function initDataScience() {
         }
 
         const count = parseInt(rawValue, 10);
-        const clusterCount = parseInt(rawClusters, 10);
+        clusterCount = parseInt(rawClusters, 10);
 
         if (isNaN(count) || count <= 0) {
             alert("Please enter a whole number greater than 0 for points.");
@@ -98,7 +99,7 @@ export function initDataScience() {
     });
 
     runBtn.addEventListener('click', () => {
-        drawPoints(kmeansPoints, clusterInput);
+        drawPoints(kmeansPoints, clusterCount);
     });
 
     clearPoints.addEventListener('click', () => {
