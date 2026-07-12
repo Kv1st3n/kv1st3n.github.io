@@ -98,7 +98,7 @@ export function initDataScience() {
     });
 
     runBtn.addEventListener('click', () => {
-        drawPoints(kmeansPoints, clusterCount);
+        drawPoints(kmeansPoints, clusterInput);
     });
 
     clearPoints.addEventListener('click', () => {
