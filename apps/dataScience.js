@@ -27,6 +27,25 @@ export function initDataScience() {
     let kmeansPoints = [];
     let clusterCount;
     let clusterCentroids = [];
+
+    const kmeansCanvas = windowEl.querySelector('#kMeansChart');
+    const resizeObserver = new ResizeObserver(() => {
+        resizeCanvasToDisplaySize(kmeansCanvas);
+        if (kmeansPoints.length > 0 && clusterCentroids.length > 0) {
+            const grouped = Object.groupBy(kmeansPoints, (point) => {
+                let closestCenterIndex = 0;
+                let minDistance = Infinity;
+                clusterCentroids.forEach((center, index) => {
+                    const dist = getDistance(point, center);
+                    if (dist < minDistance) { minDistance = dist; closestCenterIndex = index; }
+                });
+                return closestCenterIndex;
+            });
+            drawPoints(grouped, clusterCentroids);
+        }
+    });
+    resizeObserver.observe(kmeansCanvas);
+    
     // regression
 
     dataPoints = [];
@@ -83,6 +102,9 @@ export function initDataScience() {
             alert("Please enter valid positive numbers.");
             return;
         }
+
+        const canvas = windowEl.querySelector('#kMeansChart');
+        resizeCanvasToDisplaySize(canvas); 
 
         kmeansPoints = generateRandomPointsForKmeans(count);
 
@@ -330,4 +352,9 @@ function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+function resizeCanvasToDisplaySize(canvas) {
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+}
 
