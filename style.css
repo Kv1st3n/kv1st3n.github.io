@@ -104,7 +104,7 @@ body {
     display: grid;
     height: 50px;
     grid-template-columns: 80px 1fr auto;
-    grid-template-rows: 1fr;
+    grid-template-rows: 4fr;
     align-items: center;
 }
 
