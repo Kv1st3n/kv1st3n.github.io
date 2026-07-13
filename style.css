@@ -100,7 +100,9 @@ body {
 
 .taskBarGrid {
     display: grid;
-    grid-auto-columns: 10px;
+    height: 80px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 10px;
 }
 
 #start {
