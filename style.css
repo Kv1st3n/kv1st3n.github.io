@@ -90,6 +90,14 @@ body {
     width: 100%;
 }
 
+#taskBar {
+    position: absolute;
+    bottom: auto;
+    color:#000000,
+}
+
+
+
 /* Programs */
 .overlay {
     display: none;
