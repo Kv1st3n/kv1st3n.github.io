@@ -124,6 +124,8 @@ body {
     font-weight: bold;
     background: transparent !important;
     border: none !important;
+    height: 100%;
+    display: flex;
 }
 
 #start .start-btn:hover {
