@@ -128,6 +128,19 @@ body {
     font-family: 'Perfect DOS VGA 437', monospace;
 }
 
+#dateTime {
+    color: #FFFFFF;
+    font-family: 'Perfect DOS VGA 437', monospace;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: right;
+}
+
+#dateTime #dtText {
+    color: inherit;
+    font-family: inherit;
+}
+
 /* Programs */
 .overlay {
     display: none;
