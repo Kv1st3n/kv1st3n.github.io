@@ -18,9 +18,11 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    column-gap: 25px;
+    row-gap: 25px;
     z-index: 10;   
 }
 
