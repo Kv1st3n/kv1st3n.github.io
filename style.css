@@ -461,7 +461,10 @@ body {
     height: 650px;
     padding: 15px;
     box-sizing: border-box;
-    display: flex;
+}
+
+.my-data-science-prog.active {
+    display: flex !important;
     flex-direction: column;
 }
 
