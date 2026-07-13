@@ -9,7 +9,8 @@ export function initClock() {
         const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
         const time = date.toLocaleTimeString();
         const day = date.toLocaleDateString(undefined, options);
-        dtText.textContent = `${time}. ${day}`;
+        dtText.textContent = `${time}
+         ${day}`;
     }
 
     updateTime();
