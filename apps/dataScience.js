@@ -71,53 +71,47 @@ export function initDataScience() {
         const rawValue = kmeansInput.value.trim();
         const rawClusters = clustersInput.value.trim();
 
-        if (!rawValue) {
-            alert("Please enter amount of points (whole numbers).");
-            return;
-        }
-
-        if (!rawClusters) {
-            alert("Please enter an amount of clusters (whole numbers).");
+        if (!rawValue || !rawClusters) {
+            alert("Please enter both points and clusters.");
             return;
         }
 
         const count = parseInt(rawValue, 10);
         clusterCount = parseInt(rawClusters, 10);
 
-        if (isNaN(count) || count <= 0) {
-            alert("Please enter a whole number greater than 0 for points.");
-            return;
-        }
-
-        if (isNaN(clusterCount) || clusterCount <= 0) {
-            alert("Please enter a whole number greater than 0 for clusters.");
+        if (isNaN(count) || count <= 0 || isNaN(clusterCount) || clusterCount <= 0) {
+            alert("Please enter valid positive numbers.");
             return;
         }
 
         kmeansPoints = generateRandomPointsForKmeans(count);
-        clusterCentroids = initializeCentroids(kmeansPoints, clusterCount);
+
+        clusterCentroids = initializeCentroids(kmeansPoints, clusterCount); 
+        
         kmeansInput.value = '';
         clustersInput.value = '';
 
-        const initialGroups = {0: kmeansPoints};
+        const initialGroups = { 0: kmeansPoints };
         drawPoints(initialGroups, clusterCentroids);
     });
 
     runBtn.addEventListener('click', () => {
-        drawPoints(kmeansPoints, clusterCount);
-    });
-
-    clearPoints.addEventListener('click', () => {
-        if (kmeansPoints.length === 0 || clusterCenters.length === 0) {
+        if (kmeansPoints.length === 0 || clusterCentroids.length === 0) {
             alert("Please generate data points first!");
             return;
         }
 
-        const result = runKMeansIteration(kmeansPoints, clusterCenters);
+        const result = runKMeansIteration(kmeansPoints, clusterCentroids);
 
-        clusterCenters = result.newCenters;
+        clusterCentroids = result.newCenters;
         
-        drawPoints(result.grouped, clusterCenters);
+        drawPoints(result.grouped, clusterCentroids);
+    });
+
+    clearPoints.addEventListener('click', () => {
+        kmeansPoints = [];
+        clusterCentroids = [];
+        clearCanvas();
     });
 }
 
