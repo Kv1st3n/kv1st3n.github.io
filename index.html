@@ -258,7 +258,19 @@
                 </div>
 
                 <div id="dateTime">
-                    <span id="dtText"></span>
+                    <script>
+                        function updateTime() {
+                            const date = new Date();
+                            const options = { day: 'numeric', month: 'numeric', year: 'numeric'};
+                            const time = date.toLocaleTimeString();
+                            const day = date.toLocaleDateString(undefined, options);
+                            document.getElementById('dateTime').innerHTML = 
+                                '${time}. ${day}';
+                        }
+
+                        setInterval(updateTime, 1000);
+                        updateTime();
+                    </script>
                 </div>
 
             </div>
