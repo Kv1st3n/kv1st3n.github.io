@@ -140,12 +140,6 @@ body {
     outline: 2px dotted #000000 !important; 
 }
 
-.my-cable-shark-prog .close-btn:hover {
-    color: #FFFFFF !important;
-    background-color: #AA0000 !important;
-    outline: 2px solid #FF5555 !important;
-}
-
 #cli {
     color:#FFFFFF;
     font-family: 'Perfect DOS VGA 437', monospace;
