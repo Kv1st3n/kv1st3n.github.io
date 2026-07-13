@@ -2,10 +2,12 @@
 import { initCableShark, closeCableShark } from './apps/cableShark.js';
 import { initFinance } from './apps/finance.js';
 import { initDataScience } from './apps/dataScience.js';
+import { initClock } from './apps/clock.js';
 
 //initTrashBin();
 initFinance();
 initDataScience();
+initClock();
 
 const draggableElements = document.querySelectorAll(".draggable-window");
 const popupOverlay = document.getElementById('desktop-programs-overlay');
