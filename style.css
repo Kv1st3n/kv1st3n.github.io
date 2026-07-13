@@ -125,7 +125,14 @@ body {
     background: transparent !important;
     border: none !important;
     height: 100%;
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
 }
 
 #start .start-btn:hover {
