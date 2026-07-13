@@ -93,7 +93,7 @@ body {
 #taskBar {
     position: absolute;
     bottom: 0;
-    color:#000000;
+    background-color: #000000;
 }
 
 #start {
