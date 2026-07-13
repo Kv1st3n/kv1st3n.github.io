@@ -90,6 +90,8 @@ body {
     width: 100%;
 }
 
+/* Task bar */
+
 #taskBar {
     position: absolute;
     bottom: 0;
@@ -98,7 +100,7 @@ body {
 
 .taskBarGrid {
     display: grid;
-    grid-auto-rows: 10px;
+    grid-auto-columns: 10px;
 }
 
 #start {
@@ -110,7 +112,6 @@ body {
     color:#FFFFFF;
     font-family: 'Perfect DOS VGA 437', monospace;
 }
-
 
 /* Programs */
 .overlay {
