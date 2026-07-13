@@ -96,6 +96,11 @@ body {
     background-color: #000000;
 }
 
+.taskBarGrid {
+    display: grid;
+    grid-auto-rows: 10px;
+}
+
 #start {
     color: #000000;
     background-color: #C0C0C0;
@@ -106,9 +111,6 @@ body {
     font-family: 'Perfect DOS VGA 437', monospace;
 }
 
-.taskBarGrid {
-    display: grid;
-}
 
 /* Programs */
 .overlay {
