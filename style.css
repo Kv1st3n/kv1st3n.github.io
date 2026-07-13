@@ -93,10 +93,17 @@ body {
 #taskBar {
     position: absolute;
     bottom: 0;
-    color:#000000,
+    color:#000000;
 }
 
+#cli {
+    color:#FFFFFF;
+    font-family: 'Perfect DOS VGA 437', monospace;
+}
 
+.taskBarGrid {
+    display: grid;
+}
 
 /* Programs */
 .overlay {
