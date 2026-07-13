@@ -26,6 +26,7 @@ export function initDataScience() {
 
     let kmeansPoints = [];
     let clusterCount;
+    let clusterCentroids = [];
     // regression
 
     dataPoints = [];
@@ -94,8 +95,12 @@ export function initDataScience() {
         }
 
         kmeansPoints = generateRandomPointsForKmeans(count);
+        clusterCentroids = initializeCentroids(kmeansPoints, clusterCount);
         kmeansInput.value = '';
         clustersInput.value = '';
+
+        const initialGroups = {0: kmeansPoints};
+        drawPoints(initialGroups, clusterCentroids);
     });
 
     runBtn.addEventListener('click', () => {
@@ -103,8 +108,16 @@ export function initDataScience() {
     });
 
     clearPoints.addEventListener('click', () => {
-        kmeansPoints = [];
-        clearCanvas();
+        if (kmeansPoints.length === 0 || clusterCenters.length === 0) {
+            alert("Please generate data points first!");
+            return;
+        }
+
+        const result = runKMeansIteration(kmeansPoints, clusterCenters);
+
+        clusterCenters = result.newCenters;
+        
+        drawPoints(result.grouped, clusterCenters);
     });
 }
 
@@ -215,8 +228,56 @@ function updateOutput(displayElement) {
 
 // user puts in x-amount of points (an integer) and how many clusters, also ask for how many runs / iterations
 // then proceed to do kMeans
-function kMeans(points) {
+function getDistance(point1, point2) {
+    const dx = point1.x - point2.x;
+    const dy = point1.y - point2.y;
 
+    return Math.sqrt(dx * dx + dy * dy);
+}
+
+// initalize k-amount of random points, each being unique and random
+// points is the list of kmeanspoints, k is the amount of centroids
+function initializeCentroids(points, k) {
+    const shuffledPoints = [...points].sort(() => 0.5 - Math.random());
+    return shuffledPoints.slice(0, k).map(p => ({ x: p.x, y: p.y }));
+}
+
+function runKMeansIteration(points, centers) {
+
+    const grouped = Object.groupBy(points, (point) => {
+        let closestCenterIndex = 0;
+        let minDistance = Infinity;
+
+        centers.forEach((center, index) => {
+            const dist = getDistance(point, center);
+            if (dist < minDistance) {
+                minDistance = dist;
+                closestCenterIndex = index;
+            }
+        });
+
+        return closestCenterIndex;
+    });
+
+    const newCenters = centers.map((oldCenter, centerIndex) => {
+        const pointsInCluster = grouped[centerIndex];
+        
+        if (!pointsInCluster || pointsInCluster.length === 0) {
+            return { ...oldCenter };
+        }
+
+        const sumX = pointsInCluster.reduce((sum, p) => sum + p.x, 0);
+        const sumY = pointsInCluster.reduce((sum, p) => sum + p.y, 0);
+
+        return {
+            x: sumX / pointsInCluster.length,
+            y: sumY / pointsInCluster.length
+        };
+    });
+
+    return { grouped, newCenters };
+    // group by the points with the centers, (i.e. the initialized centroids at first)
+    // then iteratively update the center point, compare with getDistance, etc
 }
 
 function generateRandomPointsForKmeans(count) {
@@ -233,28 +294,38 @@ function generateRandomPointsForKmeans(count) {
     return points;
 }
 
-function drawPoints(points, clusterCount) {
+function drawPoints(groupedPoints, centers) {
     const canvas = document.getElementById('kMeansChart');
     const ctx = canvas.getContext('2d');
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    const k = centers.length;
+
     // split the points into different groups
-    const groupSplit = Object.groupBy(points, (point, index) => {
-        return index % clusterCount;
-    })
-
-    Object.keys(groupSplit).forEach((groupIndex) => {
-        const currentGroupPoints = groupSplit[groupIndex];
-
-        const hue = (groupIndex * (360 / clusterCount));
+    Object.keys(groupedPoints).forEach((groupIndex) => {
+        const points = groupedPoints[groupIndex];
+        const hue = (groupIndex * (360 / k));
+        
         ctx.fillStyle = `hsl(${hue}, 85%, 55%)`;
-
-        currentGroupPoints.forEach(point => {
+        points.forEach(point => {
             ctx.beginPath();
             ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
             ctx.fill();
         });
+    });
+
+    centers.forEach((center, index) => {
+        const hue = (index * (360 / k));
+        
+        ctx.strokeStyle = '#000000';
+        ctx.fillStyle = `hsl(${hue}, 100%, 40%)`;
+        ctx.lineWidth = 3;
+
+        ctx.beginPath();
+        // Draw a larger circle with a black border for the center
+        ctx.arc(center.x, center.y, 10, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
     });
 }
 
