@@ -50,7 +50,11 @@ function launchProgram(element) {
     if (targetWin) {
         targetWin.classList.add('active');
         targetWin.style.zIndex = "10";
+
+        const title = element.querySelector('.icon-text')?.textContent || 'Program';
+        getOrCreateTaskbarButton(targetWin, title);
     }
+
 }
 
 
@@ -61,7 +65,7 @@ function closeProgram(e) {
         return;
     }
 
-    windowEl.classList.remove('active');
+    windowEl.classList.remove('active', 'focused', 'minimized');
     windowEl.style.top = '';
     windowEl.style.left = '';
 
@@ -69,7 +73,11 @@ function closeProgram(e) {
         closeCableShark();
     }
 
-    // only hide the whole overlay once nothing is left open
+    const taskbarBtn = openedPrograms.querySelector(`[data-window="${windowEl.id}"]`);
+    if (taskbarBtn) {
+        taskbarBtn.remove();
+    }
+
     const anyStillOpen = Array.from(allProgramWindows).some(w => w.classList.contains('active'));
     if (!anyStillOpen) {
         popupOverlay.classList.remove('active');
@@ -199,3 +207,40 @@ resizers.forEach((handle) => {
 
     });
 });
+
+const openedPrograms = document.getElementById('opened-programs');
+
+function getOrCreateTaskbarButton(targetWin, title) {
+    let btn = openedPrograms.querySelector(`[data-window="${targetWin.id}"]`);
+    if (btn) {
+        return btn;
+    }
+
+    btn = document.createElement('button');
+    btn.className = 'taskbar-program-btn';
+    btn.dataset.window = targetWin.id;
+    btn.textContent = title;
+
+    btn.addEventListener('click', () => {
+        const isFocused = targetWin.classList.contains('focused');
+        const isMinimized = targetWin.classList.contains('minimized');
+
+        if (isMinimized || !isFocused) {
+            allProgramWindows.forEach(win => {
+                win.classList.remove('focused');
+                win.style.zIndex = "5";
+            });
+            targetWin.classList.remove('minimized');
+            targetWin.classList.add('focused');
+            targetWin.style.zIndex = "10";
+        } else {
+            targetWin.classList.add('minimized');
+            targetWin.classList.remove('focused');
+        }
+    });
+
+    openedPrograms.appendChild(btn);
+    return btn;
+
+}
+

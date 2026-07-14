@@ -103,7 +103,7 @@ body {
 .taskBarGrid {
     display: grid;
     height: 50px;
-    grid-template-columns: 80px 1fr auto;
+    grid-template-columns: 80px 200px 1fr auto;
     grid-template-rows: 1fr;
     align-items: center;
 }
@@ -141,13 +141,58 @@ body {
 }
 
 #cli {
-    color:#FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 8px;
+    color: #FFFFFF;
     font-family: 'Perfect DOS VGA 437', monospace;
+    box-sizing: border-box;
+}
+
+#cli p {
+    margin: 0;
 }
 
 #cli-input {
-    color:#FFFFFF;
-    font-family: 'Perfect DOS VGA 437', monospace; 
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#opened-programs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 100%;
+    padding: 0 8px;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+.taskbar-program-btn {
+    font-family: 'Perfect DOS VGA 437', monospace;
+    background-color: #C0C0C0;
+    color: #000000;
+    border: 2px solid;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.taskbar-program-btn:active {
+    border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.program-window.minimized {
+    display: none !important;
 }
 
 #dateTime {
