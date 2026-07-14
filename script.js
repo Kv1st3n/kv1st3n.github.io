@@ -51,8 +51,11 @@ function launchProgram(element) {
         targetWin.classList.add('active');
         targetWin.style.zIndex = "10";
 
+        const iconImg = element.querySelector('img');
         const title = element.querySelector('.icon-text')?.textContent || 'Program';
-        getOrCreateTaskbarButton(targetWin, title);
+        const iconSrc = iconImg ? iconImg.src : '';
+
+        getOrCreateTaskbarButton(targetWin, title, iconSrc);
     }
 
 }
@@ -210,16 +213,23 @@ resizers.forEach((handle) => {
 
 const openedPrograms = document.getElementById('opened-programs');
 
-function getOrCreateTaskbarButton(targetWin, title) {
+function getOrCreateTaskbarButton(targetWin, title, iconSrc) {
     let btn = openedPrograms.querySelector(`[data-window="${targetWin.id}"]`);
-    if (btn) {
-        return btn;
-    }
+    if (btn) return btn;
 
     btn = document.createElement('button');
     btn.className = 'taskbar-program-btn';
     btn.dataset.window = targetWin.id;
-    btn.textContent = title;
+
+    const icon = document.createElement('img');
+    icon.src = iconSrc;
+    icon.alt = title;
+    icon.className = 'taskbar-program-icon';
+    btn.appendChild(icon);
+
+    const label = document.createElement('span');
+    label.textContent = title;
+    btn.appendChild(label);
 
     btn.addEventListener('click', () => {
         const isFocused = targetWin.classList.contains('focused');
@@ -241,6 +251,4 @@ function getOrCreateTaskbarButton(targetWin, title) {
 
     openedPrograms.appendChild(btn);
     return btn;
-
 }
-

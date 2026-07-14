@@ -180,15 +180,24 @@ body {
     color: #000000;
     border: 2px solid;
     border-color: #FFFFFF #808080 #808080 #FFFFFF;
-    padding: 3px 10px;
+    padding: 3px 8px;
     cursor: pointer;
     font-size: 0.85rem;
     white-space: nowrap;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .taskbar-program-btn:active {
     border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.taskbar-program-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
 }
 
 .program-window.minimized {
