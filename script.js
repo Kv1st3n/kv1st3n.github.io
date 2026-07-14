@@ -48,7 +48,8 @@ function launchProgram(element) {
     }
 
     if (targetWin) {
-        targetWin.classList.add('active');
+        targetWin.classList.add('active', 'focused');
+        targetWin.classList.remove('minimized');
         targetWin.style.zIndex = "10";
 
         const iconImg = element.querySelector('img');
@@ -214,24 +215,17 @@ resizers.forEach((handle) => {
 const openedPrograms = document.getElementById('opened-programs');
 
 function getOrCreateTaskbarButton(targetWin, title, iconSrc) {
-    let btn = openedPrograms.querySelector(`[data-window="${targetWin.id}"]`);
-    if (btn) return btn;
+    let icon = openedPrograms.querySelector(`[data-window="${targetWin.id}"]`);
+    if (icon) return icon;
 
-    btn = document.createElement('button');
-    btn.className = 'taskbar-program-btn';
-    btn.dataset.window = targetWin.id;
-
-    const icon = document.createElement('img');
+    icon = document.createElement('img');
     icon.src = iconSrc;
     icon.alt = title;
+    icon.title = title;
     icon.className = 'taskbar-program-icon';
-    btn.appendChild(icon);
+    icon.dataset.window = targetWin.id;
 
-    const label = document.createElement('span');
-    label.textContent = title;
-    btn.appendChild(label);
-
-    btn.addEventListener('click', () => {
+    icon.addEventListener('click', () => {
         const isFocused = targetWin.classList.contains('focused');
         const isMinimized = targetWin.classList.contains('minimized');
 
@@ -249,6 +243,6 @@ function getOrCreateTaskbarButton(targetWin, title, iconSrc) {
         }
     });
 
-    openedPrograms.appendChild(btn);
-    return btn;
+    openedPrograms.appendChild(icon);
+    return icon;
 }

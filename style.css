@@ -174,30 +174,24 @@ body {
     box-sizing: border-box;
 }
 
-.taskbar-program-btn {
-    font-family: 'Perfect DOS VGA 437', monospace;
-    background-color: #C0C0C0;
-    color: #000000;
-    border: 2px solid;
-    border-color: #FFFFFF #808080 #808080 #FFFFFF;
-    padding: 3px 8px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    white-space: nowrap;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.taskbar-program-btn:active {
-    border-color: #808080 #FFFFFF #FFFFFF #808080;
-}
-
 .taskbar-program-icon {
-    width: 20px;
-    height: 20px;
-    display: block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 2px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+}
+
+.taskbar-program-icon:hover {
+    outline: 1px dotted #FFFFFF;
+}
+
+.taskbar-program-icon:active,
+.taskbar-program-icon.focused {
+    border-color: #808080 #FFFFFF #FFFFFF #808080;
+    background-color: #A8A8A8;
 }
 
 .program-window.minimized {
