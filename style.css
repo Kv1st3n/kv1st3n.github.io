@@ -145,6 +145,11 @@ body {
     font-family: 'Perfect DOS VGA 437', monospace;
 }
 
+#cli-input {
+    color:#FFFFFF;
+    font-family: 'Perfect DOS VGA 437', monospace; 
+}
+
 #dateTime {
     color: #FFFFFF;
     font-family: 'Perfect DOS VGA 437', monospace;
