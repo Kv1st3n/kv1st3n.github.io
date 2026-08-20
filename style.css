@@ -28,6 +28,14 @@ body {
     display: inline;
 }
 
+#tech-list {
+    display: inline;
+}
+
+#tech-list li {
+    display: inline;
+}
+
 #experience-box {
     margin: auto;
     width: 50%;
