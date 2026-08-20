@@ -25,6 +25,7 @@ body {
 }
 
 #language-list li {
+    margin: 1em 0;
     display: inline;
 }
 
