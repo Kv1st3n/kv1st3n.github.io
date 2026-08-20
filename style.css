@@ -9,6 +9,17 @@ body {
     padding: 10px;
 }
 
+#tech-box {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+.tect-label {
+    color: black;
+}
+
 #language-list {
     display: inline;
 }
