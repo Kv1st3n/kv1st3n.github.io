@@ -22,7 +22,7 @@ body {
 .about-me-group {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .about-me-image img {
@@ -33,7 +33,6 @@ body {
     color: #333;
     margin: 0;
 }
-
 
 /* tech stack */
 
