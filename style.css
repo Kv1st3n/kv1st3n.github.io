@@ -2,6 +2,11 @@ body {
     background-color: aliceblue;
 }
 
+.element:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* about me */
 #about-box {
     margin: auto;
     width: 50%;
@@ -26,6 +31,8 @@ body {
 .about-me-text p {
     color: red;
 }
+
+/* tech stack */
 
 #tech-box {
     margin: auto;
@@ -53,10 +60,14 @@ body {
     display: inline;
 }
 
+/* experiences and academia */
+
 #experience-box {
     margin: auto;
     width: 50%;
 }
+
+/* projects */
 
 #project-box {
     margin: auto;
