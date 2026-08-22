@@ -2,10 +2,6 @@ body {
     background-color: aliceblue;
 }
 
-.element:not(:last-child) {
-    margin-bottom: 1rem;
-}
-
 /* about me */
 #about-box {
     margin: auto;
