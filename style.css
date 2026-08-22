@@ -10,10 +10,10 @@ body {
 #tech-box, 
 #experience-box, 
 #project-box {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     width: 100%;
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 1px;
     background-color: white
 }
 
