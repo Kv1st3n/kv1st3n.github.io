@@ -1,5 +1,5 @@
 body {
-    background-color: aliceblue;
+    background-color: rgb(186, 255, 190);
     max-width: 800px; 
     margin: 0 auto;
     padding: 20px;
@@ -13,7 +13,6 @@ body {
     margin-bottom: 1rem;
     width: 100%;
     padding: 1.5rem;
-    border-radius: 1px;
     background-color: white
 }
 
