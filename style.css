@@ -1,41 +1,39 @@
 body {
     background-color: aliceblue;
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* about me */
-#about-box {
-    margin: auto;
-    width: 200px;
-    width: 50%;
-    background-color: blue;
+#about-box, 
+#tech-box, 
+#experience-box, 
+#project-box {
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: white
 }
 
-.group:after {
-    content: "";
-    display: table;
-    clear: both;
+.about-me-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.about-me-image {
-    float: left;
-    width: 25%;
-}
-
-.about-me-text {
-    float: left;
-    width: 75%;
+.about-me-image img {
+    border-radius: 50%;
 }
 
 .about-me-text p {
-    color: red;
+    color: #333;
+    margin: 0;
 }
+
 
 /* tech stack */
-
-#tech-box {
-    margin: auto;
-    width: 50%;
-}
 
 .tect-label {
     color: black;
@@ -60,14 +58,6 @@ body {
 
 /* experiences and academia */
 
-#experience-box {
-    margin: auto;
-    width: 50%;
-}
 
 /* projects */
 
-#project-box {
-    margin: auto;
-    width: 50%;
-}
