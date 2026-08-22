@@ -12,8 +12,7 @@ p {
 
 /* about me */
 #about-box, 
-#tech-box, 
-#experience-box, 
+#tech-box,  
 #project-box {
     margin-bottom: 1rem;
     width: 100%;
@@ -61,13 +60,18 @@ p {
     font-size: 20px;
 }
 
+#experience-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .academic-box {
     margin-bottom: 0.2rem;
-    width: 100%;
+    width: 90%;
+    box-sizing: border-box;
     padding: 0.5rem;
-    border: 2px;
-    border-style: solid;
-    border-color: black;
+    border: 2px solid black;
 
 }
 
