@@ -30,7 +30,6 @@ body {
 #tech-box {
     margin: auto;
     width: 50%;
-    border: 3px solid green;
 }
 
 .tect-label {
@@ -57,13 +56,9 @@ body {
 #experience-box {
     margin: auto;
     width: 50%;
-    border: 3px solid green;
-    padding: 10px;
 }
 
 #project-box {
     margin: auto;
     width: 50%;
-    border: 3px solid green;
-    padding: 10px;
 }
