@@ -7,7 +7,7 @@ body {
 
 p {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 /* about me */
@@ -45,20 +45,14 @@ p {
     color: black;
 }
 
+#tech-list,
 #language-list {
     display: inline;
 }
 
+#tech-list li, 
 #language-list li {
     margin: 10px;
-    display: inline;
-}
-
-#tech-list {
-    display: inline;
-}
-
-#tech-list li {
     display: inline;
 }
 
