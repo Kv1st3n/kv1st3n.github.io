@@ -57,10 +57,16 @@ p {
 
 /* experiences and academia */
 #title {
-    font: bold;
+    font-weight: bold;
 }
 
+.academic-desc {
+    font-family: 'Courier New', Courier, monospace;
+}
 
+.academic-coursework p {
+    font-family: 'Courier New', Courier, monospace;
+}
 
 /* projects */
 
