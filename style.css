@@ -5,6 +5,11 @@ body {
     padding: 20px;
 }
 
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
 /* about me */
 #about-box, 
 #tech-box, 
