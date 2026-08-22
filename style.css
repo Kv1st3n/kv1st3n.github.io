@@ -9,7 +9,9 @@ body {
 /* about me */
 #about-box {
     margin: auto;
+    width: 200px;
     width: 50%;
+    background-color: blue;
 }
 
 .group:after {
