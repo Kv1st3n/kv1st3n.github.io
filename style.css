@@ -58,10 +58,21 @@ p {
 /* experiences and academia */
 #title {
     font-weight: bold;
+    font-size: 20px;
+}
+
+#sub-title {
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .academic-desc {
     font-family: 'Courier New', Courier, monospace;
+}
+
+.course-name {
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .academic-coursework {
