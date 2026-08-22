@@ -9,6 +9,26 @@ body {
     padding: 10px;
 }
 
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.about-me-image {
+    float: left;
+    width: 25%;
+}
+
+.about-me-text {
+    float: left;
+    width: 75%;
+}
+
+.about-me-text p {
+    color: red;
+}
+
 #tech-box {
     margin: auto;
     width: 50%;
