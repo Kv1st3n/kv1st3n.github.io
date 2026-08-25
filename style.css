@@ -71,15 +71,15 @@ p {
 }
 
 .language-box img {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     object-fit: contain;
     flex-shrink: 0;
 }
 
 .language-box span {
     color: black;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     text-align: left;
     margin: 0;
