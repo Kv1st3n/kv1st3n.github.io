@@ -65,18 +65,17 @@ p {
     border: 2px solid black;
 }
 
-#language-box img {
-    display: flex;
-    justify-content: left;
-    width: 100%;
-    height: auto;
+.flex-left {
+    width: 40%;
+    height: 100vh;
+    margin: 3px;
+    padding: 3px;
 }
 
-#language-box p {
-    display: flex;
-    margin-left: 5px;
-    text-align: right;
-    color: black;
+.flex-right {
+    width: 60%;
+    margin: 3px;
+    padding: 3px;
 }
 
 #tech-list {
