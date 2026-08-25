@@ -54,12 +54,13 @@ p {
 #language-grid {
     display: grid;
     justify-content: center;
-
+    height: 100px;
+    grid-row-end: auto;
 }
 
 #language-box {
     background-color: white;
-    width: 20%;
+    width: 50%;
     border: 2px solid black;
 }
 
