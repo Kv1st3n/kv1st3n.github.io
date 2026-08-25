@@ -51,8 +51,32 @@ p {
     color: black;
 }
 
-#tech-list,
-#language-list {
+#language-grid {
+    display: grid;
+    height: 100px;
+    grid-row-end: auto;
+}
+
+#language-box {
+    background-color: #333;
+    width: 100%;
+    border: 2px solid black;
+}
+
+#language-box img {
+    display: flex;
+    justify-content: left;
+    margin: auto;
+    width: 50%;
+}
+
+#language-box p {
+    display: flex;
+    margin-left: 5px;
+    justify-content: right;
+}
+
+#tech-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
