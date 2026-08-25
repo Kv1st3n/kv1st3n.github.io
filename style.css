@@ -64,21 +64,22 @@ p {
     border: 2px solid black;
     display: flex;
     align-items: center; 
-    gap: 10px;
-    padding: 10px;
+    gap: 8px;
+    padding: 8px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .language-box img {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
     flex-shrink: 0;
 }
 
 .language-box span {
     color: black;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     text-align: left;
     margin: 0;
