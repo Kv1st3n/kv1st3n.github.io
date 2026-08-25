@@ -53,13 +53,13 @@ p {
 
 #language-grid {
     display: grid;
-    height: 100px;
-    grid-row-end: auto;
+    justify-content: center;
+
 }
 
 #language-box {
-    background-color: #333;
-    width: 100%;
+    background-color: white;
+    width: 20%;
     border: 2px solid black;
 }
 
