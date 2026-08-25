@@ -53,14 +53,13 @@ p {
 
 #language-grid {
     display: grid;
-    justify-content: center;
-    height: 100px;
-    grid-row-end: auto;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 50px 50px;
 }
 
 #language-box {
     background-color: white;
-    width: 50%;
+    width: 100%;
     border: 2px solid black;
 }
 
