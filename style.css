@@ -68,14 +68,14 @@ p {
 #language-box img {
     display: flex;
     justify-content: left;
-    margin: auto;
-    width: 50%;
+    width: 100%;
+    height: auto;
 }
 
 #language-box p {
     display: flex;
     margin-left: 5px;
-    justify-content: right;
+    text-align: right;
     color: black;
 }
 
