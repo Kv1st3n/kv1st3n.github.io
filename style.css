@@ -52,26 +52,27 @@ p {
 }
 
 #language-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
 .language-box {
     background-color: white;
-    height: 80px;
-    width: 120px;
+    height: 70px;
+    width: 130px;
     border: 2px solid black;
 
     display: flex;
     align-items: center; 
-    padding: 10px;
+    padding: 0 10px;
     box-sizing: border-box;
+    gap: 10px; 
 }
 
 .flex-left-image {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     flex-shrink: 0;
 }
 
@@ -81,14 +82,11 @@ p {
     object-fit: contain;
 }
 
-.flex-right-text {
-    flex-grow: 1;
-}
-
 .flex-right-text p {
     color: black;
-    text-align: right;
+    text-align: left;
     margin: 0;
+    font-weight: bold;
 }
 
 #tech-list {
