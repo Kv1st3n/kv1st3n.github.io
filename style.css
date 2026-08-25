@@ -54,7 +54,9 @@ p {
 #language-grid {
     display: grid;
     grid-template-columns: 100px 100px 100px;
+    column-gap: 10px;
     grid-template-rows: 100px 100px;
+    row-gap: 10px;
 }
 
 #language-box {
