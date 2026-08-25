@@ -74,6 +74,7 @@ p {
     display: flex;
     margin-left: 5px;
     justify-content: right;
+    color: black;
 }
 
 #tech-list {
