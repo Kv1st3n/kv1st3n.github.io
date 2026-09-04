@@ -128,3 +128,6 @@ p {
 
 /* projects */
 
+.project {
+    border: 2px solid black;
+}
